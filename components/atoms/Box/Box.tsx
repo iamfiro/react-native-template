@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { TouchableOpacity, View, ViewStyle } from 'react-native';
 import { BoxProps } from './index.type';
 
