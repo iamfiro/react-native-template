@@ -21,4 +21,8 @@ export interface ButtonActionProps {
 export interface ButtonProps extends ButtonActionProps, WithChildren {
     variant?: ButtonVariant;
     size?: ButtonSize;
+
+    isPending?: boolean;
+    
+    disabled?: boolean;
 }

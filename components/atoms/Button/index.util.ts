@@ -53,12 +53,14 @@ export function getButtonStyleByVariant(size: ButtonSize): ViewStyle & TextStyle
                 height: 56,
                 borderRadius: 14,
                 fontSize: 15,
+                paddingHorizontal: 20,
             }
         case ButtonSize.SMALL:
             return {
-                height: 30,
+                height: 38,
                 borderRadius: 8,
                 fontSize: 12,
+                paddingHorizontal: 12,
             }
         default:
             return {

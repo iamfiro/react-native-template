@@ -1,14 +1,17 @@
-import { TouchableOpacity, StyleSheet, Text, TextProps, Animated } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, TextProps, Animated, ActivityIndicator } from 'react-native';
 import { ButtonProps, ButtonSize, ButtonVariant } from './index.type';
 import { getButtonColorByVariant, getButtonStyleByVariant } from './index.util';
 import React from 'react';
 import { useTheme } from '@/hooks/useTheme';
 import { useButtonAnimation } from '@/hooks/components';
+import { Color } from '@/constants/color';
 
 export default function Button({
     children,
     variant = ButtonVariant.PRIMARY,
     size = ButtonSize.LARGE,
+    isPending,
+    disabled,
     onPress,
 }: ButtonProps) {
     const theme = useTheme();
@@ -32,6 +35,12 @@ export default function Button({
         return children;
     };
 
+    const handlePress = () => {
+        if (!isPending && !disabled && onPress) {
+            onPress();
+        }
+    };
+
     return (
         <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
             <TouchableOpacity
@@ -39,13 +48,22 @@ export default function Button({
                     ...ButtonStyle.color,
                     ...ButtonStyle.size,
                     ...buttonStyle.button,
+                    opacity: disabled ? 0.5 : 1,
                 }}
-                activeOpacity={0.6}
-                onPress={onPress}
+                disabled={isPending || disabled}
+                onPress={handlePress}
                 onPressIn={handlePressIn}
                 onPressOut={handlePressOut}
             >
-                {renderChildren()}
+                {isPending ? (
+                    <ActivityIndicator 
+                        size={24} 
+                        color={variant === ButtonVariant.SECONDARY || variant === ButtonVariant.SUCCESS
+                            ? Color.sementic.white 
+                            : Color.sementic.black
+                        } 
+                    />
+                ) : renderChildren()}
             </TouchableOpacity>
         </Animated.View>
     );

@@ -6,8 +6,9 @@ const useButtonAnimation = () => {
 
     const handlePressIn = () => {
         Animated.spring(scaleAnim, {
-            toValue: 0.94,
+            toValue: 0.95,
             useNativeDriver: true,
+            speed: 100    // 애니메이션 속도 증가
         }).start();
     };
 
@@ -15,8 +16,9 @@ const useButtonAnimation = () => {
         Animated.spring(scaleAnim, {
             toValue: 1,
             useNativeDriver: true,
+            speed: 100
         }).start();
-    };
+    }
 
     return {
         scaleAnim,
