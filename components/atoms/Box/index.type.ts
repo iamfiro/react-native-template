@@ -18,6 +18,8 @@ interface BoxFlexProps {
 
 interface BoxStyleProps {
     bgColor?: VariantColorType;
+    fullWidth?: boolean;
+    fullHeight?: boolean;
 }
 
 export type BoxProps = BoxStyleProps & BoxFlexProps & (BoxViewProps | BoxTouchableProps);

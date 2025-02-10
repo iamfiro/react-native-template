@@ -7,6 +7,7 @@ export default function Box({
     justify = 'flex-start',
     align = 'stretch',
     wrap = 'nowrap',
+    fullHeight, fullWidth,
     as,
     ...restProps
 }: BoxProps) {
@@ -18,6 +19,10 @@ export default function Box({
         justifyContent: justify,
         alignItems: align,
         flexWrap: wrap,
+
+        // fullWidth, fullHeight가 true일 경우 100%로 지정
+        width: fullWidth ? '100%' : undefined,
+        height: fullHeight ? '100%' : undefined,
     };
 
     const Component = as === 'hoverable' ? TouchableOpacity : View;
