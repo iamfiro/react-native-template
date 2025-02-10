@@ -75,42 +75,40 @@ function firstLetterToUpperCase(str: string) {
 function generateConstants(category: string, values: TokenCategory) {
   let variables = "";
 
-  if (isColorCategory(values)) {
-    // 컬러 카테고리인 경우 light/dark 객체 구조로 생성
-    const lightValues = values.light;
-    const darkValues = values.dark;
-
-    variables += "    light: {\n";
-    Object.entries(lightValues).forEach(([key, value]) => {
-      variables += `        ${key}: '${value}',\n`;
-    });
-    variables += "    },\n";
-
-    variables += "    dark: {\n";
-    Object.entries(darkValues).forEach(([key, value]) => {
-      variables += `        ${key}: '${value}',\n`;
-    });
-    variables += "    },\n";
-
-    return variables;
-  }
-
   // 일반 카테고리 처리
-  Object.entries(values).forEach(([key, value]) => {
-    // spacing, size, borderRadius는 숫자 값 그대로 사용
-    // 나머지는 문자열로 처리
-    const formattedValue =
-      typeof value === "number"
-        ? category === "spacing" ||
-          category === "size" ||
-          category === "borderRadius"
-          ? value
-          : value
-        : `'${value}'`;
-    variables += `    ${key}: ${formattedValue},\n`;
+  variables += generateNestedObject(values, 1);
+  return variables;
+}
+
+/**
+ * 중첩된 객체 구조를 문자열로 변환
+ */
+function generateNestedObject(obj: Record<string, any>, depth: number): string {
+  let result = "";
+  const indent = "    ".repeat(depth);
+
+  Object.entries(obj).forEach(([key, value]) => {
+    if (typeof value === "object" && value !== null) {
+      result += `${indent}${key}: {\n`;
+      result += generateNestedObject(value, depth + 1);
+      result += `${indent}},\n`;
+    } else {
+      const formattedValue = formatValue(value);
+      result += `${indent}${key}: ${formattedValue},\n`;
+    }
   });
 
-  return variables;
+  return result;
+}
+
+/**
+ * 값 포맷팅
+ */
+function formatValue(value: ThemeValue): string {
+  if (typeof value === "number") {
+    return value.toString();
+  }
+  return `'${value}'`;
 }
 
 try {
