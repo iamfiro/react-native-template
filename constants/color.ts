@@ -2,28 +2,23 @@
 /* To make changes, edit src/token/token.json */
 
 export const Color = {
+    sementic: {
+        primary: '#4B8EF8',
+        secondary: '#727680',
+        warning: '#F6B233',
+        danger: '#E74D3F',
+        success: '#38B66B',
+        white: '#FFFFFF',
+        black: '#000000',
+    },
     light: {
-        primary: '#FF0000',
-        secondary: '#00FF00',
-        tertiary: '#0000FF',
-        quaternary: '#FFFF00',
-        quinary: '#00FFFF',
-        senary: '#FF00FF',
-        septenary: '#FF0000',
-        octonary: '#00FF00',
-        nonary: '#0000FF',
-        denary: '#FFFF00',
+        text: '#1F1F1F',
+        surface: '#FFFFFF',
+        surfaceSecondary: '#e3e1e1',
     },
     dark: {
-        primary: '#FF0000',
-        secondary: '#00FF00',
-        tertiary: '#0000FF',
-        quaternary: '#FFFF00',
-        quinary: '#00FFFF',
-        senary: '#FF00FF',
-        septenary: '#FF0000',
-        octonary: '#00FF00',
-        nonary: '#0000FF',
-        denary: '#FFFF00',
+        text: '#FFFFFF',
+        surface: '#1F1F1F',
+        surfaceSecondary: '#2D2D2D',
     },
 } as const;
