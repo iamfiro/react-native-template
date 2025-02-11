@@ -1,3 +1,4 @@
+import { Color } from '@/constants/color';
 import { useTheme } from '@/hooks/useTheme';
 import {
     DarkTheme,
@@ -10,6 +11,22 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+
+const CustomDefaultTheme = {
+	...DefaultTheme,
+	colors: {
+		...DefaultTheme.colors,
+		background: Color['light']['surface'],
+	},
+};
+
+const CustomDarkTheme = {
+	...DarkTheme,
+	colors: {
+		...DarkTheme.colors,
+		background: Color['dark']['surface'],
+	},
+};
 
 // asset이 로딩되기 전 splash screen이 닫히지 않도록 설정
 SplashScreen.preventAutoHideAsync();
@@ -38,7 +55,7 @@ export default function RootLayout() {
     }
 
     return (
-        <ThemeProvider value={theme === 'dark' ? DarkTheme : DefaultTheme}>
+        <ThemeProvider value={theme === 'dark' ? CustomDarkTheme : CustomDefaultTheme}>
             <Stack>
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
