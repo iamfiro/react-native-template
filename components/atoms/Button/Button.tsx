@@ -54,6 +54,7 @@ export default function Button({
                 onPress={handlePress}
                 onPressIn={handlePressIn}
                 onPressOut={handlePressOut}
+                activeOpacity={0.6}
             >
                 {isPending ? (
                     <ActivityIndicator 
