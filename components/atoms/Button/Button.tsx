@@ -60,8 +60,8 @@ export default function Button({
                     <ActivityIndicator 
                         size={24} 
                         color={variant === ButtonVariant.SECONDARY || variant === ButtonVariant.SUCCESS
-                            ? Color.sementic.white 
-                            : Color.sementic.black
+                            ? Color.light.white 
+                            : Color.light.black
                         } 
                     />
                 ) : renderChildren()}

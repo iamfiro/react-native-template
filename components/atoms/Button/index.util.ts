@@ -8,8 +8,8 @@ export function getButtonColorByVariant(variant: ButtonVariant, theme: ThemeColo
     switch (variant) {
         case ButtonVariant.PRIMARY:
             return {
-                backgroundColor: Color.sementic.primary,
-                color: Color.sementic.white,
+                backgroundColor: Color[theme].primary,
+                color: Color[theme].white,
             };
         case ButtonVariant.SECONDARY:
             return {
@@ -18,18 +18,18 @@ export function getButtonColorByVariant(variant: ButtonVariant, theme: ThemeColo
             };
         case ButtonVariant.DANGER:
             return {
-                backgroundColor: Color.sementic.danger,
-                color: Color.sementic.white,
+                backgroundColor: Color[theme].danger,
+                color: Color[theme].white,
             };
         case ButtonVariant.SUCCESS:
             return {
-                backgroundColor: Color.sementic.success,
-                color: Color.sementic.white,
+                backgroundColor: Color[theme].success,
+                color: Color[theme].white,
             };
         case ButtonVariant.WARNING:
             return {
-                backgroundColor: Color.sementic.warning,
-                color: Color.sementic.black,
+                backgroundColor: Color[theme].warning,
+                color: Color[theme].black,
             };
         case ButtonVariant.TEXT:
             return {
