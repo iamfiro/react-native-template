@@ -1,3 +1,4 @@
+import { Badge, BadgeVariant } from '@/components/atoms/Badge';
 import { Button } from '@/components/atoms/Button';
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/index.type';
 import { Typo } from '@/components/atoms/Typo';
@@ -16,6 +17,7 @@ export default function HomeScreen() {
                 <Text>저장s하기</Text>
             </VStack>
             <Typo size={32} weight={TypoWeight.Bold}>아이이</Typo>
+            <Badge variant={BadgeVariant.WARNING}>기본</Badge>
         </SafeAreaView>
     );
 }
