@@ -121,3 +121,5 @@ Use proper TypeScript configuration
 
 
 This instruction set provides a comprehensive guide for maintaining high-quality code in the React Native project, focusing on type safety, performance, and maintainability.
+
+if used Color to code you must read constants/color.ts
