@@ -40,14 +40,18 @@ export default function TitleHeader({
                 align="center"
                 onLayout={(e) => setChevronWidth(e.nativeEvent.layout.width)}
             >
-                <TouchableOpacity onPress={() => navigation.goBack()}>
+                <VStack
+                    as="hoverable"
+                    align="center"
+                    onPress={() => navigation.goBack()}
+                >
                     {showBackButton && <Icon.chevronLeft size={40} />}
                     {backButtonText && (
                         <Typo size={14} style={{ marginLeft: -6 }}>
                             {backButtonText}
                         </Typo>
                     )}
-                </TouchableOpacity>
+                </VStack>
             </VStack>
             <Typo>{children}</Typo>
             <Box
