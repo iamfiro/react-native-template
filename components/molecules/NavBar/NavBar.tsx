@@ -17,7 +17,11 @@ export default function NavBar({ children }: WithChildren) {
         <VStack
             fullWidth
             justify="space-around"
-            style={{ borderTopColor: Color[theme].border, ...s.container }}
+            style={{
+                borderTopColor: Color[theme].border,
+                backgroundColor: Color[theme].surface,
+                ...s.container,
+            }}
         >
             {children}
         </VStack>
