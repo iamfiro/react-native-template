@@ -62,7 +62,7 @@ const Input = forwardRef<InputRef, InputProps>(
                     },
                 ]}
                 align="center"
-                gap={2}
+                gap={4}
             >
                 {clonedLeadingIcon && clonedLeadingIcon}
                 <TextInput
