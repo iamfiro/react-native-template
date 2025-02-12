@@ -7,6 +7,7 @@ import { Label } from '@/components/atoms/Label';
 import { Typo } from '@/components/atoms/Typo';
 import { TypoWeight } from '@/components/atoms/Typo/Typo.type';
 import { VStack } from '@/components/atoms/VStack';
+import { Icon } from '@/components/icon/glyph';
 import TitleHeader from '@/components/molecules/TitleHeader/TitleHeader';
 import { Text, SafeAreaView } from 'react-native';
 
@@ -36,7 +37,7 @@ export default function HomeScreen() {
                 <Input
                     placeholder="아이디"
                     onChange={() => {}}
-                    leadingIcon={<Typo>asd</Typo>}
+                    leadingIcon={<Icon.asterisk />}
                 />
             </HStack>
         </SafeAreaView>
