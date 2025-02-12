@@ -1,6 +1,6 @@
 import { Icon } from '@/components/icon/glyph';
 import { Typo } from '../Typo';
-import { LabelProps, LabelSize, LabelStatus } from './index.type';
+import { LabelProps, LabelSize, LabelStatus } from './Label.type';
 import { VStack } from '../VStack';
 import { Color } from '@/constants/color';
 import { useTheme } from '@/hooks/useTheme';

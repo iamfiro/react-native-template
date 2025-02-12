@@ -1,2 +1,2 @@
-export {default as Label} from './Label';
-export * from './index.type';
+export { default as Label } from './Label';
+export * from './Label.type';

@@ -1,9 +1,12 @@
 import { TextStyle, ViewStyle } from 'react-native';
-import { ButtonSize, ButtonVariant } from './index.type';
+import { ButtonSize, ButtonVariant } from './Button.type';
 import { Color } from '@/constants/color';
 import { ThemeColorType, VariantColorType } from '@/types/color';
 
-export function getButtonColorByVariant(variant: ButtonVariant, theme: ThemeColorType): ViewStyle & TextStyle {
+export function getButtonColorByVariant(
+    variant: ButtonVariant,
+    theme: ThemeColorType,
+): ViewStyle & TextStyle {
     console.log(Color[theme], 'ss');
     switch (variant) {
         case ButtonVariant.PRIMARY:
@@ -46,7 +49,9 @@ export function getButtonColorByVariant(variant: ButtonVariant, theme: ThemeColo
     }
 }
 
-export function getButtonStyleByVariant(size: ButtonSize): ViewStyle & TextStyle {
+export function getButtonStyleByVariant(
+    size: ButtonSize,
+): ViewStyle & TextStyle {
     switch (size) {
         case ButtonSize.LARGE:
             return {
@@ -54,17 +59,17 @@ export function getButtonStyleByVariant(size: ButtonSize): ViewStyle & TextStyle
                 borderRadius: 14,
                 fontSize: 15,
                 paddingHorizontal: 20,
-            }
+            };
         case ButtonSize.SMALL:
             return {
                 height: 38,
                 borderRadius: 8,
                 fontSize: 12,
                 paddingHorizontal: 12,
-            }
+            };
         default:
             return {
                 height: 30,
-            }
+            };
     }
 }

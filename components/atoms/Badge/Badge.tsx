@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { useTheme } from '@/hooks/useTheme';
 
-import { BadgeProps, BadgeSize, BadgeVariant } from './index.type';
+import { BadgeProps, BadgeSize, BadgeVariant } from './Badge.type';
 
 import { Box } from '../Box';
 import { Typo } from '../Typo';

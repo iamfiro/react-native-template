@@ -1,8 +1,14 @@
-import { cloneElement, forwardRef, isValidElement, useRef, useState } from 'react';
+import {
+    cloneElement,
+    forwardRef,
+    isValidElement,
+    useRef,
+    useState,
+} from 'react';
 import { Animated, StyleSheet, TextInput, View } from 'react-native';
 import { useTheme } from '@/hooks/useTheme';
 import { Color } from '@/constants/color';
-import { InputProps, InputRef } from './index.type';
+import { InputProps, InputRef } from './Input.type';
 import { VStack } from '../VStack';
 import { Typo } from '../Typo';
 
@@ -14,9 +20,12 @@ const Input = forwardRef<InputRef, InputProps>(
 
         let clonedLeadingIcon = null;
         if (isValidElement(leadingIcon)) {
-            clonedLeadingIcon = cloneElement(leadingIcon as React.ReactElement<any>, {  
-                style: { color: Color[theme].textSecondary },
-            });
+            clonedLeadingIcon = cloneElement(
+                leadingIcon as React.ReactElement<any>,
+                {
+                    style: { color: Color[theme].textSecondary },
+                },
+            );
         }
         const handleFocus = () => {
             setIsFocused(true);
@@ -52,9 +61,7 @@ const Input = forwardRef<InputRef, InputProps>(
                 align="center"
                 gap={6}
             >
-                {clonedLeadingIcon && (
-                    clonedLeadingIcon
-                )}
+                {clonedLeadingIcon && clonedLeadingIcon}
                 <TextInput
                     ref={ref}
                     style={{

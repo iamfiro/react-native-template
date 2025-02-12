@@ -1,5 +1,5 @@
 import { TouchableOpacity, View, ViewStyle } from 'react-native';
-import { BoxProps } from './index.type';
+import { BoxProps } from './Box.type';
 
 export default function Box({
     bgColor,
@@ -8,7 +8,8 @@ export default function Box({
     align = 'stretch',
     wrap = 'nowrap',
     gap,
-    fullHeight, fullWidth,
+    fullHeight,
+    fullWidth,
     as,
     style,
     ...restProps

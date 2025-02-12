@@ -1,6 +1,13 @@
-import { TouchableOpacity, StyleSheet, Text, TextProps, Animated, ActivityIndicator } from 'react-native';
-import { ButtonProps, ButtonSize, ButtonVariant } from './index.type';
-import { getButtonColorByVariant, getButtonStyleByVariant } from './index.util';
+import {
+    TouchableOpacity,
+    StyleSheet,
+    Text,
+    TextProps,
+    Animated,
+    ActivityIndicator,
+} from 'react-native';
+import { ButtonProps, ButtonSize, ButtonVariant } from './Button.type';
+import { getButtonColorByVariant, getButtonStyleByVariant } from './Button.util';
 import React from 'react';
 import { useTheme } from '@/hooks/useTheme';
 import { useButtonAnimation } from '@/hooks/components';
@@ -57,14 +64,18 @@ export default function Button({
                 activeOpacity={0.6}
             >
                 {isPending ? (
-                    <ActivityIndicator 
-                        size={24} 
-                        color={variant === ButtonVariant.SECONDARY || variant === ButtonVariant.SUCCESS
-                            ? Color.light.white 
-                            : Color.light.black
-                        } 
+                    <ActivityIndicator
+                        size={24}
+                        color={
+                            variant === ButtonVariant.SECONDARY ||
+                            variant === ButtonVariant.SUCCESS
+                                ? Color.light.white
+                                : Color.light.black
+                        }
                     />
-                ) : renderChildren()}
+                ) : (
+                    renderChildren()
+                )}
             </TouchableOpacity>
         </Animated.View>
     );

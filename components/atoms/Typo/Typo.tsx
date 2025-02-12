@@ -1,5 +1,5 @@
 import { useTheme } from '@/hooks/useTheme';
-import { TypoProps, TypoWeight } from './index.type';
+import { TypoProps, TypoWeight } from './Typo.type';
 
 import { Text, TextStyle } from 'react-native';
 import { Color } from '@/constants/color';

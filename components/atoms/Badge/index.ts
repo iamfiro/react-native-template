@@ -1,2 +1,2 @@
 export * from './Badge';
-export * from './index.type';
+export * from './Badge.type';
