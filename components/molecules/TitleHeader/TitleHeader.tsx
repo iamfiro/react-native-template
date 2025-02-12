@@ -42,7 +42,7 @@ export default function TitleHeader({
                         <Icon.chevronLeft size={40} />
                     </TouchableOpacity>
                 )}
-                {backButtonText && <Typo size={14} style={{marginLeft: -4}}>{backButtonText}</Typo>}
+                {backButtonText && <Typo size={14} style={{marginLeft: -6}}>{backButtonText}</Typo>}
             </VStack>
             <Typo>{children}</Typo>
             <Box
