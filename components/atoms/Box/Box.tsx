@@ -7,11 +7,13 @@ export default function Box({
     justify = 'flex-start',
     align = 'stretch',
     wrap = 'nowrap',
+    gap,
     fullHeight, fullWidth,
     as,
+    style,
     ...restProps
 }: BoxProps) {
-    const style: ViewStyle = {
+    const baseStyle: ViewStyle = {
         backgroundColor: bgColor,
         // Flex를 기본 스타일로 지정
         display: 'flex',
@@ -19,6 +21,7 @@ export default function Box({
         justifyContent: justify,
         alignItems: align,
         flexWrap: wrap,
+        gap,
 
         // fullWidth, fullHeight가 true일 경우 100%로 지정
         width: fullWidth ? '100%' : undefined,
@@ -27,5 +30,5 @@ export default function Box({
 
     const Component = as === 'hoverable' ? TouchableOpacity : View;
 
-    return <Component style={style} {...restProps} />;
+    return <Component style={[baseStyle, style]} {...restProps} />;
 }

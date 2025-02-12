@@ -14,6 +14,7 @@ interface BoxFlexProps {
     justify?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around';
     align?: 'center' | 'flex-start' | 'flex-end' | 'stretch';
     wrap?: 'wrap' | 'nowrap';
+    gap?: number;
 }
 
 interface BoxStyleProps {
