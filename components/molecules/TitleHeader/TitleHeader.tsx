@@ -1,5 +1,5 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { TitleHeaderProps } from '.';
+import { TitleHeaderProps } from './TitleHeader.type';
 import { VStack } from '../../atoms/VStack';
 import { Typo } from '../../atoms/Typo';
 import { Icon } from '../../icon/glyph';
