@@ -3,7 +3,7 @@ import { BoxProps } from '../Box/index.type';
 
 export default function HStack({ children, ...restProps }: BoxProps) {
     return (
-        <Box direction="row" {...restProps}>
+        <Box direction="column" {...restProps}>
             {children}
         </Box>
     );
