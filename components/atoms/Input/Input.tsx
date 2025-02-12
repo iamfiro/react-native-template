@@ -24,6 +24,7 @@ const Input = forwardRef<InputRef, InputProps>(
                 leadingIcon as React.ReactElement<any>,
                 {
                     style: { color: Color[theme].textSecondary },
+                    color: Color[theme].textSecondary,
                 },
             );
         }
@@ -59,7 +60,7 @@ const Input = forwardRef<InputRef, InputProps>(
                     },
                 ]}
                 align="center"
-                gap={6}
+                gap={2}
             >
                 {clonedLeadingIcon && clonedLeadingIcon}
                 <TextInput
