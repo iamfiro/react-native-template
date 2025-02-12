@@ -17,21 +17,21 @@ export function getSocialBrandDetail(brand: SocialLoginBrand): returnType {
                 icon: <BrandIcon.google size={22} />,
                 name: 'Google',
                 backgroundColor: '#fff',
-                textColor: 'text'
+                textColor: 'black'
             };
         case SocialLoginBrand.APPLE:
             return {
                 icon: <BrandIcon.apple color="white" size={22} />,
                 name: 'Apple',
                 backgroundColor: '#000',
-                textColor: 'textInverted'
+                textColor: 'white'
             };
         default:
             return {
                 icon: null,
                 name: '(error)',
                 backgroundColor: '#fff',
-                textColor: 'text'
+                textColor: 'black'
             };
     }
 }
