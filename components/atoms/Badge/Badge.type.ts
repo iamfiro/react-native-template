@@ -1,10 +1,10 @@
 import { WithChildren } from "@/types/components";
 
 export enum BadgeVariant {
-  PRIMARY = 'primary',
-  SUCCESS = 'success',
-  WARNING = 'warning',
-  DANGER = 'danger',
+  BRAND = 'Brand',
+  SUCCESS = 'Success',
+  WARNING = 'Warning',
+  DANGER = 'Danger',
 }
 
 export enum BadgeSize {

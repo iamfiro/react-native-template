@@ -24,7 +24,9 @@ const Input = forwardRef<InputRef, InputProps>(
                 leadingIcon as React.ReactElement<any>,
                 {
                     style: { color: Color[theme].textSecondary },
-                    color: Color[theme].textSecondary,
+                    color: isFocused
+                        ? Color[theme].text
+                        : Color[theme].textSecondary,
                 },
             );
         }
@@ -51,9 +53,9 @@ const Input = forwardRef<InputRef, InputProps>(
                 style={[
                     {
                         borderColor: error
-                            ? Color[theme].danger
+                            ? Color[theme].borderError
                             : isFocused
-                              ? Color[theme].primary
+                              ? Color[theme].borderBrand
                               : Color[theme].border,
                         borderWidth: error || isFocused ? 2 : 1,
                         ...s.container,

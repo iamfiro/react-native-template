@@ -19,7 +19,7 @@ export default function Label({
             style={{ opacity: status === LabelStatus.DISABLED ? 0.4 : 1 }}
         >
             <Typo size={size === LabelSize.MEDIUM ? 14 : 12}>{children}</Typo>
-            {essential && <Icon.asterisk size={14} color={'#E74D3F'} />}
+            {essential && <Icon.asterisk size={14} color={Color[theme].error50} />}
         </VStack>
     );
 }

@@ -15,7 +15,7 @@ import { Color } from '@/constants/color';
 
 export default function Button({
     children,
-    variant = ButtonVariant.PRIMARY,
+    variant = ButtonVariant.BRAND,
     size = ButtonSize.LARGE,
     isPending,
     disabled,
@@ -69,8 +69,8 @@ export default function Button({
                         color={
                             variant === ButtonVariant.SECONDARY ||
                             variant === ButtonVariant.SUCCESS
-                                ? Color.light.white
-                                : Color.light.black
+                                ? Color[theme].white
+                                : Color[theme].black
                         }
                     />
                 ) : (

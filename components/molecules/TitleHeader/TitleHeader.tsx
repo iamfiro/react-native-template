@@ -45,9 +45,9 @@ export default function TitleHeader({
                     align="center"
                     onPress={() => navigation.goBack()}
                 >
-                    {showBackButton && <Icon.chevronLeft size={40} />}
+                    {showBackButton && <Icon.chevronLeft size={40} color={Color[theme].textSecondary} />}
                     {backButtonText && (
-                        <Typo size={14} style={{ marginLeft: -6 }}>
+                        <Typo size={14} color='textSecondary' style={{ marginLeft: -6 }}>
                             {backButtonText}
                         </Typo>
                     )}

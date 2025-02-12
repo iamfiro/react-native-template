@@ -1,17 +1,17 @@
 import { WithChildren } from "@/types/components";
 
 export enum ButtonVariant {
-    PRIMARY = 'PRIMARY',
-    SECONDARY = 'SECONDARY',
-    DANGER = 'DANGER',
-    SUCCESS = 'SUCCESS',
-    WARNING = 'WARNING',
-    TEXT = 'TEXT'
+    BRAND = 'brand',
+    SECONDARY = 'secondary',
+    DANGER = 'danger',
+    SUCCESS = 'success',
+    WARNING = 'warning',
+    TEXT = 'text'
 }
 
 export enum ButtonSize {
-    SMALL = 'SMALL',
-    LARGE = 'LARGE'
+    SMALL = 'small',
+    LARGE = 'large'
 }
 
 export interface ButtonActionProps {

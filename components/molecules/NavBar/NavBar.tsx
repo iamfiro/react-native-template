@@ -29,8 +29,8 @@ function NavBarItem({ children, icon, screenName, selected }: NavBarItemProps) {
     const router = useRouter();
 
     const color = {
-        icon: selected ? Color[theme].primary : Color[theme].textSecondary,
-        text: selected ? 'primary' : 'textSecondary',
+        icon: selected ? Color[theme].textBrand : Color[theme].textSecondary,
+        text: selected ? 'textBrand' : 'textSecondary',
     };
 
     // Icon의 사이즈를 24로 고정

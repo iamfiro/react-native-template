@@ -24,7 +24,19 @@ export default function HomeScreen() {
                 <HStack style={{ padding: 20 }}>
                     <VStack>
                         <Button
+                            variant={ButtonVariant.BRAND}
+                            onPress={() => {}}
+                        >
+                            <Text>저장s하기</Text>
+                        </Button>
+                        <Button
                             variant={ButtonVariant.SUCCESS}
+                            onPress={() => {}}
+                        >
+                            <Text>저장s하기</Text>
+                        </Button>
+                        <Button
+                            variant={ButtonVariant.SECONDARY}
                             onPress={() => {}}
                         >
                             <Text>저장s하기</Text>
@@ -32,7 +44,7 @@ export default function HomeScreen() {
                         <Text style={{ fontFamily: 'PretendardBold' }}>
                             저장s하기
                         </Text>
-                        <Text>저장s하기</Text>
+                        <Typo>저장s하기</Typo>
                     </VStack>
                     <Typo size={32} weight={TypoWeight.Bold}>
                         아이이
@@ -43,7 +55,7 @@ export default function HomeScreen() {
                     >
                         준비 안됨
                     </Badge>
-                    <Label>앙기모찌</Label>
+                    <Label essential>앙기모찌</Label>
                     <Input
                         placeholder="아이디"
                         onChange={() => {}}

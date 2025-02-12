@@ -9,34 +9,35 @@ export function getButtonColorByVariant(
 ): ViewStyle & TextStyle {
     console.log(Color[theme], 'ss');
     switch (variant) {
-        case ButtonVariant.PRIMARY:
+        case ButtonVariant.BRAND:
             return {
-                backgroundColor: Color[theme].primary,
+                backgroundColor: Color[theme].brand50,
                 color: Color[theme].white,
             };
         case ButtonVariant.SECONDARY:
             return {
-                backgroundColor: Color[theme].surfaceSecondary,
+                backgroundColor: Color[theme].gray20,
                 color: Color[theme].text,
             };
         case ButtonVariant.DANGER:
             return {
-                backgroundColor: Color[theme].danger,
+                backgroundColor: Color[theme].error50,
                 color: Color[theme].white,
             };
         case ButtonVariant.SUCCESS:
             return {
-                backgroundColor: Color[theme].success,
+                backgroundColor: Color[theme].success50,
                 color: Color[theme].white,
             };
         case ButtonVariant.WARNING:
             return {
-                backgroundColor: Color[theme].warning,
+                backgroundColor: Color[theme].warning50,
                 color: Color[theme].black,
             };
         case ButtonVariant.TEXT:
             return {
                 backgroundColor: 'transparent',
+                color: Color[theme].text,
                 padding: 10,
                 borderRadius: 5,
             };

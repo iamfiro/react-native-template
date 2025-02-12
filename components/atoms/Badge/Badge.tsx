@@ -8,17 +8,14 @@ import { Typo } from '../Typo';
 
 import { Color } from '@/constants/color';
 import { VariantColorType } from '@/types/color';
+import { getBadgeBackgroundColor, getBadgeTextColor } from './Badge.util';
 
 export function Badge({
     children,
-    variant = BadgeVariant.PRIMARY,
+    variant = BadgeVariant.BRAND,
     size = BadgeSize.MEDIUM,
 }: BadgeProps) {
     const theme = useTheme();
-
-    const getBackgroundColor = () => {
-        return Color[theme][`${variant}Background`];
-    };
 
     const getPadding = () => {
         switch (size) {
@@ -47,12 +44,12 @@ export function Badge({
             style={[
                 styles.container,
                 {
-                    backgroundColor: getBackgroundColor(),
+                    backgroundColor: getBadgeBackgroundColor(variant, theme),
                     ...getPadding(),
                 },
             ]}
         >
-            <Typo size={getFontSize()} weight={400} color={variant}>
+            <Typo size={getFontSize()} weight={400} color={getBadgeTextColor(variant)}>
                 {children}
             </Typo>
         </Box>
