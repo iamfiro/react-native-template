@@ -1,11 +1,11 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { TitleHeaderProps } from '.';
-import { VStack } from '../atoms/VStack';
-import { Typo } from '../atoms/Typo';
-import { Icon } from '../icon/glyph';
+import { VStack } from '../../atoms/VStack';
+import { Typo } from '../../atoms/Typo';
+import { Icon } from '../../icon/glyph';
 import { useTheme } from '@/hooks/useTheme';
 import { Color } from '@/constants/color';
-import { Box } from '../atoms/Box';
+import { Box } from '../../atoms/Box';
 import { useNavigation } from 'expo-router';
 import { useEffect, useState } from 'react';
 

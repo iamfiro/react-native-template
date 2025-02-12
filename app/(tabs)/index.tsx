@@ -7,7 +7,7 @@ import { Label } from '@/components/atoms/Label';
 import { Typo } from '@/components/atoms/Typo';
 import { TypoWeight } from '@/components/atoms/Typo/index.type';
 import { VStack } from '@/components/atoms/VStack';
-import TitleHeader from '@/components/molecules/TitleHeader';
+import TitleHeader from '@/components/molecules/TitleHeader/TitleHeader';
 import { Text, SafeAreaView } from 'react-native';
 
 export default function HomeScreen() {
