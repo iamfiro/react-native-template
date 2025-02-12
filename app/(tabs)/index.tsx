@@ -9,6 +9,8 @@ import { TypoWeight } from '@/components/atoms/Typo/Typo.type';
 import { VStack } from '@/components/atoms/VStack';
 import { Icon } from '@/components/icon/glyph';
 import { NavBar } from '@/components/molecules/NavBar';
+import { SocialLogin } from '@/components/molecules/SocialLogin';
+import { SocialLoginBrand } from '@/components/molecules/SocialLogin/SocialLogin.type';
 import TitleHeader from '@/components/molecules/TitleHeader/TitleHeader';
 import { Text, SafeAreaView } from 'react-native';
 
@@ -47,11 +49,26 @@ export default function HomeScreen() {
                         onChange={() => {}}
                         leadingIcon={<Icon.asterisk />}
                     />
+                    <HStack gap={10}>
+                        <SocialLogin
+                            brand={SocialLoginBrand.GOOGLE}
+                            onPress={() => {}}
+                            border
+                        />
+                        <SocialLogin
+                            brand={SocialLoginBrand.APPLE}
+                            onPress={() => {}}
+                        />
+                    </HStack>
                 </HStack>
             </SafeAreaView>
             <NavBar>
-                <NavBar.Item icon={<Icon.asterisk />} selected screenName='..'>홈</NavBar.Item>
-                <NavBar.Item selected={false} screenName='..'>홈</NavBar.Item>
+                <NavBar.Item icon={<Icon.asterisk />} selected screenName="..">
+                    홈
+                </NavBar.Item>
+                <NavBar.Item selected={false} screenName="..">
+                    홈
+                </NavBar.Item>
             </NavBar>
         </>
     );
