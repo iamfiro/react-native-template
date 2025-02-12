@@ -7,3 +7,8 @@ export interface ComponentPropsForTest {
 export interface WithChildren {
     children: ReactNode;
 }
+
+export interface SVGProps {
+    size?: number;
+    color?: string;
+}
