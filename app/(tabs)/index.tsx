@@ -4,6 +4,7 @@ import { ButtonVariant } from '@/components/atoms/Button/Button.type';
 import { HStack } from '@/components/atoms/HStack';
 import { Input } from '@/components/atoms/Input';
 import { Label } from '@/components/atoms/Label';
+import { Skeleton } from '@/components/atoms/Skeleton';
 import { Typo } from '@/components/atoms/Typo';
 import { TypoWeight } from '@/components/atoms/Typo/Typo.type';
 import { VStack } from '@/components/atoms/VStack';
@@ -72,6 +73,8 @@ export default function HomeScreen() {
                             onPress={() => {}}
                         />
                     </HStack>
+                    <Skeleton width={200} height={24} />
+                    <Skeleton width={40} height={40} />
                 </HStack>
             </SafeAreaView>
             <NavBar>
