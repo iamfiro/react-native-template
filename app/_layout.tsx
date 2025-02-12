@@ -13,19 +13,19 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 const CustomDefaultTheme = {
-	...DefaultTheme,
-	colors: {
-		...DefaultTheme.colors,
-		background: Color['light']['surface'],
-	},
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        background: Color['light']['surface'],
+    },
 };
 
 const CustomDarkTheme = {
-	...DarkTheme,
-	colors: {
-		...DarkTheme.colors,
-		background: Color['dark']['surface'],
-	},
+    ...DarkTheme,
+    colors: {
+        ...DarkTheme.colors,
+        background: Color['dark']['surface'],
+    },
 };
 
 // asset이 로딩되기 전 splash screen이 닫히지 않도록 설정
@@ -55,7 +55,9 @@ export default function RootLayout() {
     }
 
     return (
-        <ThemeProvider value={theme === 'dark' ? CustomDarkTheme : CustomDefaultTheme}>
+        <ThemeProvider
+            value={theme === 'dark' ? CustomDarkTheme : CustomDefaultTheme}
+        >
             <Stack>
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="+not-found" />
