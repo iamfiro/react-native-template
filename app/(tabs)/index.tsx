@@ -1,6 +1,7 @@
 import { Badge, BadgeSize, BadgeVariant } from '@/components/atoms/Badge';
 import { Button } from '@/components/atoms/Button';
 import { ButtonSize, ButtonVariant } from '@/components/atoms/Button/index.type';
+import { Input } from '@/components/atoms/Input';
 import { Typo } from '@/components/atoms/Typo';
 import { TypoWeight } from '@/components/atoms/Typo/index.type';
 import { VStack } from '@/components/atoms/VStack';
@@ -18,6 +19,7 @@ export default function HomeScreen() {
             </VStack>
             <Typo size={32} weight={TypoWeight.Bold}>아이이</Typo>
             <Badge variant={BadgeVariant.WARNING} size={BadgeSize.LARGE}>준비 안됨</Badge>
+            <Input placeholder="아이디" onChange={() => {}} leadingIcon={<Typo>asd</Typo>} />
         </SafeAreaView>
     );
 }
