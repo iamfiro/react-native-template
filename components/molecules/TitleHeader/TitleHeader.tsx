@@ -36,17 +36,22 @@ export default function TitleHeader({
             }
             align="center"
         >
-            <VStack align='center' onLayout={(e) => setChevronWidth(e.nativeEvent.layout.width)}>
-                {showBackButton && (
-                    <TouchableOpacity onPress={() => navigation.goBack()}>
-                        <Icon.chevronLeft size={40} />
-                    </TouchableOpacity>
-                )}
-                {backButtonText && <Typo size={14} style={{marginLeft: -6}}>{backButtonText}</Typo>}
+            <VStack
+                align="center"
+                onLayout={(e) => setChevronWidth(e.nativeEvent.layout.width)}
+            >
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    {showBackButton && <Icon.chevronLeft size={40} />}
+                    {backButtonText && (
+                        <Typo size={14} style={{ marginLeft: -6 }}>
+                            {backButtonText}
+                        </Typo>
+                    )}
+                </TouchableOpacity>
             </VStack>
             <Typo>{children}</Typo>
             <Box
-                as='hoverable'
+                as="hoverable"
                 style={{
                     minWidth: chevronWidth,
                 }}
