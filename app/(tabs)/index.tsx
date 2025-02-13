@@ -20,7 +20,8 @@ import {
     SocialLoginBrand,
     TitleHeader,
 } from '@/components/molecules';
-import { useState } from 'react';
+import DatePicker from '@/components/organisms/DatePicker/DatePicker';
+import React, { useState } from 'react';
 import { Text, SafeAreaView } from 'react-native';
 
 export default function HomeScreen() {
@@ -30,6 +31,8 @@ export default function HomeScreen() {
         { label: 'Monthly', value: 'monthly' },
     ];
     const [selected, setSelected] = useState('daily');
+    const [date, setDate] = useState(new Date());
+
     return (
         <>
             <SafeAreaView style={{ paddingTop: 40 }}>
@@ -96,6 +99,12 @@ export default function HomeScreen() {
                     onChange={setSelected}
                 />
             </SafeAreaView>
+            <DatePicker
+                value={date}
+                onChange={() => {}}
+                minimumDate={new Date(2000, 0, 1)}
+                maximumDate={new Date(2100, 11, 31)}
+            />
             <NavBar>
                 <NavBar.Item icon={<Icon.asterisk />} selected screenName="..">
                     홈

@@ -43,6 +43,12 @@
             "./assets/fonts/Pretendard-SemiBold.otf"
           ]
         }
+      ],
+      [
+        "@react-native-community/datetimepicker",
+        {
+          "androidMode": "default"
+        }
       ]
     ],
     "experiments": {
