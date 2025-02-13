@@ -33,6 +33,7 @@ export default function Segment({
                         as={isSelected ? 'view' : 'hoverable'}
                         justify="center"
                         align="center"
+                        key={option.value}
                         bgColor={
                             isSelected
                                 ? theme === 'light'
