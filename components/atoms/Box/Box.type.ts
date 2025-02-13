@@ -1,5 +1,5 @@
-import { VariantColorType } from "@/types/color";
-import { TouchableOpacityProps, ViewProps } from "react-native";
+import { VariantColorType } from '@/types/color';
+import { TouchableOpacityProps, ViewProps } from 'react-native';
 
 export type BoxViewProps = {
     as?: 'view';
@@ -11,10 +11,16 @@ export type BoxTouchableProps = {
 
 interface BoxFlexProps {
     direction?: 'row' | 'column';
-    justify?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around';
+    justify?:
+        | 'center'
+        | 'flex-start'
+        | 'flex-end'
+        | 'space-between'
+        | 'space-around';
     align?: 'center' | 'flex-start' | 'flex-end' | 'stretch';
     wrap?: 'wrap' | 'nowrap';
     gap?: number;
+    reverse?: boolean; // Added this line
 }
 
 interface BoxStyleProps {
@@ -23,4 +29,6 @@ interface BoxStyleProps {
     fullHeight?: boolean;
 }
 
-export type BoxProps = BoxStyleProps & BoxFlexProps & (BoxViewProps | BoxTouchableProps);
+export type BoxProps = BoxStyleProps &
+    BoxFlexProps &
+    (BoxViewProps | BoxTouchableProps);

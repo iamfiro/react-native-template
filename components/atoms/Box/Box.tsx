@@ -12,6 +12,7 @@ export default function Box({
     gap,
     fullHeight,
     fullWidth,
+    reverse, // Added this line
     as,
     style,
     ...restProps
@@ -20,15 +21,12 @@ export default function Box({
 
     const baseStyle: ViewStyle = {
         backgroundColor: Color[theme][bgColor ?? 'surface'],
-        // Flex를 기본 스타일로 지정
         display: 'flex',
-        flexDirection: direction,
+        flexDirection: `${direction}${reverse ? '-reverse' : ''}`, // direction now includes -reverse variants
         justifyContent: justify,
         alignItems: align,
         flexWrap: wrap,
         gap,
-
-        // fullWidth, fullHeight가 true일 경우 100%로 지정
         width: fullWidth ? '100%' : undefined,
         height: fullHeight ? '100%' : undefined,
     };
