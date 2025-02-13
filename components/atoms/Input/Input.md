@@ -16,8 +16,6 @@ import { Input } from '@/components/atoms';
 ```tsx
 import { TextInputProps } from 'react-native';
 
-export interface InputRef extends TextInput {}
-
 export interface InputProps extends TextInputProps {
     error?: boolean;               // 에러 상태 표시
     leadingIcon?: ReactNode;       // 입력창 좌측 아이콘
