@@ -45,7 +45,7 @@ export default function HomeScreen() {
                             variant={ButtonVariant.BRAND}
                             onPress={() => {}}
                         >
-                            <Text>저장s하기</Text>
+                            저장s하기
                         </Button>
                         <Button
                             variant={ButtonVariant.SUCCESS}

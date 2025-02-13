@@ -37,8 +37,7 @@ export default function Button({
     };
 
     const renderChildren = () => {
-        if (React.isValidElement(children) && (children.type === Typo || children.type === Text)) {
-            console.log('asd', ButtonStyle.color.color);
+        if (React.isValidElement(children)) {
             return React.cloneElement(children, {
                 style: {
                     ...children.props.style,
@@ -46,6 +45,12 @@ export default function Button({
                 },
                 color: ButtonStyle.color.color,
             } as TextProps);
+        } else if (typeof children === 'string') {
+            return (
+                <Typo size={ButtonStyle.size.fontSize} color={ButtonStyle.color.color as VariantColorType}>
+                    {children}
+                </Typo>
+            );
         }
         return children;
     };
