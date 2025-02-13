@@ -20,9 +20,9 @@ import {
     SocialLoginBrand,
     TitleHeader,
 } from '@/components/molecules';
-import DatePicker from '@/components/organisms/DatePicker/DatePicker';
 import React, { useState } from 'react';
 import { Text, SafeAreaView } from 'react-native';
+import { DatePicker } from '@/components/organisms';
 
 export default function HomeScreen() {
     const options = [
