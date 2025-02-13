@@ -227,6 +227,7 @@ const s = StyleSheet.create({
     },
     iosPickerContainer: {
         padding: 10,
+        paddingTop: 0,
 
         borderRadius: 22,
         borderWidth: 1,
