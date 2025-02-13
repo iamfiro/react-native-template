@@ -28,6 +28,8 @@ export default function DatePicker({
     minimumDate,
     maximumDate,
     disabled,
+    fullWidth,
+    fullRadius,
 }: DatePickerProps) {
     const theme = useTheme();
     const [show, setShow] = useState(false);
@@ -97,31 +99,35 @@ export default function DatePicker({
 
     return (
         <VStack>
-            <TouchableOpacity onPress={handlePress} disabled={disabled}>
-                <VStack
-                    align="center"
-                    gap={8}
-                    style={[
-                        s.container,
-                        {
-                            borderColor: show
-                                ? Color[theme].borderBrand
-                                : Color[theme].border,
-                            borderWidth: show ? 2 : 1,
-                            opacity: disabled ? 0.5 : 1,
-                        },
-                    ]}
+            <VStack
+                as="hoverable"
+                onPress={handlePress}
+                disabled={disabled}
+                align="center"
+                gap={8}
+                style={[
+                    s.container,
+                    {
+                        borderColor: show
+                            ? Color[theme].borderBrand
+                            : Color[theme].border,
+                        borderWidth: show ? 2 : 1,
+                        opacity: disabled ? 0.5 : 1,
+                        backgroundColor: Color[theme].surface,
+                        width: fullWidth ? '100%' : 'auto',
+                        borderRadius: fullRadius ? 999 : 16,
+                    },
+                ]}
+            >
+                <Icon.calender size={24} color={Color[theme].textSecondary} />
+                <Typo
+                    size={15}
+                    color={disabled ? 'textDisabled' : 'text'}
+                    weight={400}
                 >
-                    <Icon.calender size={24} color={Color[theme].textSecondary} />
-                    <Typo
-                        size={15}
-                        color={disabled ? 'textDisabled' : 'text'}
-                        weight={400}
-                    >
-                        {formatDate(value)}
-                    </Typo>
-                </VStack>
-            </TouchableOpacity>
+                    {formatDate(value)}
+                </Typo>
+            </VStack>
 
             {/* DatePicker */}
             {show && (
