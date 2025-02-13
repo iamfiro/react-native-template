@@ -50,7 +50,7 @@ export default function Segment({
                         }}
                         onPress={() => handlePress(option.value)}
                     >
-                        <Typo>{option.label}</Typo>
+                        <Typo size={14}>{option.label}</Typo>
                     </Box>
                 );
             })}
