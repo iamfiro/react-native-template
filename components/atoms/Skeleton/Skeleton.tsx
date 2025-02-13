@@ -51,7 +51,7 @@ export default function Skeleton({
                     width: finalWidth,
                     height: finalHeight,
                     borderRadius: finalRadius,
-                    backgroundColor: Color[theme].surfaceSecondary,
+                    backgroundColor: Color[theme].surfaceTertiary,
                 },
                 animatedStyle,
                 style,
