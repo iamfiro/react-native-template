@@ -10,7 +10,6 @@ import { useTheme } from '@/hooks/useTheme';
 import { Color } from '@/constants/color';
 import { InputProps, InputRef } from './Input.type';
 import { VStack } from '../VStack';
-import { Typo } from '../Typo';
 
 const Input = forwardRef<InputRef, InputProps>(
     ({ error, leadingIcon, style, ...props }, ref) => {
