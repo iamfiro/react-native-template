@@ -1,9 +1,9 @@
 import {
     TouchableOpacity,
     StyleSheet,
-    Text,
     TextProps,
     Animated,
+    Text,
     ActivityIndicator,
 } from 'react-native';
 import { ButtonProps, ButtonSize, ButtonVariant } from './Button.type';
@@ -15,6 +15,8 @@ import React from 'react';
 import { useTheme } from '@/hooks/useTheme';
 import { useButtonAnimation } from '@/hooks/components';
 import { Color } from '@/constants/color';
+import { VariantColorType } from '@/types/color';
+import { Typo } from '../Typo';
 
 export default function Button({
     children,
@@ -35,13 +37,14 @@ export default function Button({
     };
 
     const renderChildren = () => {
-        if (React.isValidElement(children) && children.type === Text) {
+        if (React.isValidElement(children) && (children.type === Typo || children.type === Text)) {
+            console.log('asd', ButtonStyle.color.color);
             return React.cloneElement(children, {
                 style: {
                     ...children.props.style,
-                    color: ButtonStyle.color.color,
                     fontSize: ButtonStyle.size.fontSize,
                 },
+                color: ButtonStyle.color.color,
             } as TextProps);
         }
         return children;
