@@ -1,21 +1,35 @@
-import { Badge, BadgeSize, BadgeVariant } from '@/components/atoms/Badge';
-import { Button } from '@/components/atoms/Button';
-import { ButtonVariant } from '@/components/atoms/Button/Button.type';
-import { HStack } from '@/components/atoms/HStack';
-import { Input } from '@/components/atoms/Input';
-import { Label } from '@/components/atoms/Label';
-import { Skeleton } from '@/components/atoms/Skeleton';
-import { Typo } from '@/components/atoms/Typo';
-import { TypoWeight } from '@/components/atoms/Typo/Typo.type';
-import { VStack } from '@/components/atoms/VStack';
+import {
+    Badge,
+    BadgeSize,
+    BadgeVariant,
+    Button,
+    ButtonVariant,
+    HStack,
+    Input,
+    Label,
+    Skeleton,
+    Typo,
+    TypoWeight,
+    VStack,
+} from '@/components/atoms';
 import { Icon } from '@/components/icon/glyph';
-import { NavBar } from '@/components/molecules/NavBar';
-import { SocialLogin } from '@/components/molecules/SocialLogin';
-import { SocialLoginBrand } from '@/components/molecules/SocialLogin/SocialLogin.type';
-import TitleHeader from '@/components/molecules/TitleHeader/TitleHeader';
+import {
+    NavBar,
+    Segment,
+    SocialLogin,
+    SocialLoginBrand,
+    TitleHeader,
+} from '@/components/molecules';
+import { useState } from 'react';
 import { Text, SafeAreaView } from 'react-native';
 
 export default function HomeScreen() {
+    const options = [
+        { label: 'Daily', value: 'daily' },
+        { label: 'Weekly', value: 'weekly' },
+        { label: 'Monthly', value: 'monthly' },
+    ];
+    const [selected, setSelected] = useState('daily');
     return (
         <>
             <SafeAreaView style={{ paddingTop: 40 }}>
@@ -76,6 +90,11 @@ export default function HomeScreen() {
                     <Skeleton width={200} height={24} />
                     <Skeleton width={40} height={40} />
                 </HStack>
+                <Segment
+                    options={options}
+                    value={selected}
+                    onChange={setSelected}
+                />
             </SafeAreaView>
             <NavBar>
                 <NavBar.Item icon={<Icon.asterisk />} selected screenName="..">
