@@ -101,8 +101,10 @@ export default function HomeScreen() {
             </SafeAreaView>
             <DatePicker
                 value={date}
-                onChange={() => {}}
-                minimumDate={new Date(2000, 0, 1)}
+                onChange={(event, date) => {
+                    console.log('index.tsx', { event, date });
+                }}
+                minimumDate={new Date(2020, 0, 1)}
                 maximumDate={new Date(2100, 11, 31)}
             />
             <NavBar>

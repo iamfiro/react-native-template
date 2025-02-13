@@ -18,6 +18,7 @@ import {
 } from 'react-native';
 import { Color } from '@/constants/color';
 import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
+import { Icon } from '@/components/icon/glyph';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
@@ -55,7 +56,7 @@ export default function DatePicker({
 
         // value 업데이트
         value.setTime(newDate.getTime());
-        
+
         // onChange 콜백 호출
         if (onChange) {
             const event: DateTimePickerEvent = {
@@ -97,7 +98,9 @@ export default function DatePicker({
     return (
         <VStack>
             <TouchableOpacity onPress={handlePress} disabled={disabled}>
-                <Box
+                <VStack
+                    align="center"
+                    gap={8}
                     style={[
                         s.container,
                         {
@@ -109,6 +112,7 @@ export default function DatePicker({
                         },
                     ]}
                 >
+                    <Icon.calender size={24} color={Color[theme].textSecondary} />
                     <Typo
                         size={15}
                         color={disabled ? 'textDisabled' : 'text'}
@@ -116,7 +120,7 @@ export default function DatePicker({
                     >
                         {formatDate(value)}
                     </Typo>
-                </Box>
+                </VStack>
             </TouchableOpacity>
 
             {/* DatePicker */}
