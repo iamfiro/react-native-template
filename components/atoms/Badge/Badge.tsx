@@ -6,8 +6,6 @@ import { BadgeProps, BadgeSize, BadgeVariant } from './Badge.type';
 import { Box } from '../Box';
 import { Typo } from '../Typo';
 
-import { Color } from '@/constants/color';
-import { VariantColorType } from '@/types/color';
 import { getBadgeBackgroundColor, getBadgeTextColor } from './Badge.util';
 
 export function Badge({
