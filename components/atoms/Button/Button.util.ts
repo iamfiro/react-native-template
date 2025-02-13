@@ -7,7 +7,6 @@ export function getButtonColorByVariant(
     variant: ButtonVariant,
     theme: ThemeColorType,
 ): ViewStyle & TextStyle {
-    console.log(Color[theme], 'ss');
     switch (variant) {
         case ButtonVariant.BRAND:
             return {

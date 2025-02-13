@@ -19,10 +19,6 @@ export default function TitleHeader({
     const navigation = useNavigation();
     const [chevronWidth, setChevronWidth] = useState(0);
 
-    useEffect(() => {
-        console.log(chevronWidth);
-    }, [chevronWidth]);
-
     return (
         <VStack
             fullWidth
