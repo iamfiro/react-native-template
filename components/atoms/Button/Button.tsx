@@ -7,7 +7,10 @@ import {
     ActivityIndicator,
 } from 'react-native';
 import { ButtonProps, ButtonSize, ButtonVariant } from './Button.type';
-import { getButtonColorByVariant, getButtonStyleByVariant } from './Button.util';
+import {
+    getButtonColorByVariant,
+    getButtonStyleByVariant,
+} from './Button.util';
 import React from 'react';
 import { useTheme } from '@/hooks/useTheme';
 import { useButtonAnimation } from '@/hooks/components';
@@ -19,6 +22,8 @@ export default function Button({
     size = ButtonSize.LARGE,
     isPending,
     disabled,
+    fullWidth,
+    fullRadius,
     onPress,
 }: ButtonProps) {
     const theme = useTheme();
@@ -49,14 +54,21 @@ export default function Button({
     };
 
     return (
-        <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
+        <Animated.View
+            style={[
+                { transform: [{ scale: scaleAnim }] },
+                fullWidth && buttonStyle.fullWidth,
+            ]}
+        >
             <TouchableOpacity
-                style={{
-                    ...ButtonStyle.color,
-                    ...ButtonStyle.size,
-                    ...buttonStyle.button,
-                    opacity: disabled ? 0.5 : 1,
-                }}
+                style={[
+                    ButtonStyle.color,
+                    ButtonStyle.size,
+                    buttonStyle.button,
+                    fullWidth && buttonStyle.fullWidth,
+                    fullRadius && buttonStyle.fullRadius,
+                    { opacity: disabled ? 0.5 : 1 },
+                ]}
                 disabled={isPending || disabled}
                 onPress={handlePress}
                 onPressIn={handlePressIn}
@@ -86,5 +98,12 @@ const buttonStyle = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius: 8,
+    },
+    fullWidth: {
+        width: '100%',
+    },
+    fullRadius: {
+        borderRadius: 999,
     },
 });

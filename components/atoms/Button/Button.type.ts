@@ -1,4 +1,4 @@
-import { WithChildren } from "@/types/components";
+import { WithChildren } from '@/types/components';
 
 export enum ButtonVariant {
     BRAND = 'brand',
@@ -6,12 +6,12 @@ export enum ButtonVariant {
     DANGER = 'danger',
     SUCCESS = 'success',
     WARNING = 'warning',
-    TEXT = 'text'
+    TEXT = 'text',
 }
 
 export enum ButtonSize {
     SMALL = 'small',
-    LARGE = 'large'
+    LARGE = 'large',
 }
 
 export interface ButtonActionProps {
@@ -21,8 +21,8 @@ export interface ButtonActionProps {
 export interface ButtonProps extends ButtonActionProps, WithChildren {
     variant?: ButtonVariant;
     size?: ButtonSize;
-
     isPending?: boolean;
-    
     disabled?: boolean;
+    fullWidth?: boolean;
+    fullRadius?: boolean;
 }
