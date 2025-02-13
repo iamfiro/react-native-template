@@ -43,12 +43,6 @@
             "./assets/fonts/Pretendard-SemiBold.otf"
           ]
         }
-      ],
-      [
-        "expo-calendar",
-        {
-          "calendarPermission": "일정을 확인하고 관리하기 위해 캘린더 접근 권한이 필요합니다."
-        }
       ]
     ],
     "experiments": {
