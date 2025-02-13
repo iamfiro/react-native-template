@@ -57,16 +57,16 @@ export default function Button({
         <Animated.View
             style={[
                 { transform: [{ scale: scaleAnim }] },
-                fullWidth && buttonStyle.fullWidth,
+                fullWidth && s.fullWidth,
             ]}
         >
             <TouchableOpacity
                 style={[
                     ButtonStyle.color,
                     ButtonStyle.size,
-                    buttonStyle.button,
-                    fullWidth && buttonStyle.fullWidth,
-                    fullRadius && buttonStyle.fullRadius,
+                    s.button,
+                    fullWidth && s.fullWidth,
+                    fullRadius && s.fullRadius,
                     { opacity: disabled ? 0.5 : 1 },
                 ]}
                 disabled={isPending || disabled}
@@ -93,12 +93,11 @@ export default function Button({
     );
 }
 
-const buttonStyle = StyleSheet.create({
+const s = StyleSheet.create({
     button: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 8,
     },
     fullWidth: {
         width: '100%',

@@ -88,6 +88,13 @@ export function getButtonStyleByVariant(
                 fontSize: 15,
                 paddingHorizontal: 20,
             };
+        case ButtonSize.MEDIUM:
+            return {
+                height: 46,
+                borderRadius: 12,
+                fontSize: 14,
+                paddingHorizontal: 16,
+            };
         case ButtonSize.SMALL:
             return {
                 height: 38,
