@@ -1,4 +1,4 @@
-import { WithChildren } from '@/types/components';
+import { ComponentPropsFull, WithChildren } from '@/types/components';
 
 export enum ButtonVariant {
     BRAND = 'brand',
@@ -19,11 +19,12 @@ export interface ButtonActionProps {
     onPress: () => void;
 }
 
-export interface ButtonProps extends ButtonActionProps, WithChildren {
+export interface ButtonProps
+    extends ButtonActionProps,
+        WithChildren,
+        Pick<ComponentPropsFull, 'fullWidth' | 'fullRadius'> {
     variant?: ButtonVariant;
     size?: ButtonSize;
     isPending?: boolean;
     disabled?: boolean;
-    fullWidth?: boolean;
-    fullRadius?: boolean;
 }

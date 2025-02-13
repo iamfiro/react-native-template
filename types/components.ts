@@ -12,3 +12,9 @@ export interface SVGProps {
     size?: number;
     color?: string;
 }
+
+export interface ComponentPropsFull {
+    fullWidth?: boolean;
+    fullHeight?: boolean;
+    fullRadius?: boolean;
+}
