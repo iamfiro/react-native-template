@@ -7,6 +7,7 @@ import {
     Button,
     ButtonSize,
     ButtonVariant,
+    HStack,
     Typo,
     VStack,
 } from '@/components/atoms';
@@ -160,7 +161,7 @@ export default function DatePicker({
                                 ]}
                                 align="center"
                                 justify="center"
-                                gap={12}
+                                gap={6}
                                 onLayout={(e) =>
                                     setModalHeight(e.nativeEvent.layout.height)
                                 }
@@ -180,26 +181,26 @@ export default function DatePicker({
                                     display="inline"
                                     themeVariant={theme}
                                 />
-                                <Button
-                                    variant={ButtonVariant.BRAND}
-                                    size={ButtonSize.MEDIUM}
-                                    onPress={handleIOSConfirm}
-                                    fullWidth
-                                >
-                                    <Typo size={16} color="white">
-                                        확인
-                                    </Typo>
-                                </Button>
-                                <Button
-                                    variant={ButtonVariant.SECONDARY}
-                                    size={ButtonSize.MEDIUM}
-                                    fullWidth
-                                    onPress={() => setShow(false)}
-                                >
-                                    <Typo size={16} color="white">
-                                        닫기
-                                    </Typo>
-                                </Button>
+                                <HStack gap={8} fullWidth>
+                                    <Button
+                                        variant={ButtonVariant.BRAND}
+                                        size={ButtonSize.MEDIUM}
+                                        onPress={handleIOSConfirm}
+                                        fullWidth
+                                    >
+                                        <Typo size={16} color="white">
+                                            확인
+                                        </Typo>
+                                    </Button>
+                                    <Button
+                                        variant={ButtonVariant.SECONDARY}
+                                        size={ButtonSize.MEDIUM}
+                                        fullWidth
+                                        onPress={() => setShow(false)}
+                                    >
+                                        <Typo size={16}>닫기</Typo>
+                                    </Button>
+                                </HStack>
                             </Box>
                         </>
                     )}
