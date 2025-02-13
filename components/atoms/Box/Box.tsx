@@ -1,5 +1,7 @@
 import { TouchableOpacity, View, ViewStyle } from 'react-native';
 import { BoxProps } from './Box.type';
+import { Color } from '@/constants/color';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Box({
     bgColor,
@@ -14,8 +16,10 @@ export default function Box({
     style,
     ...restProps
 }: BoxProps) {
+    const theme = useTheme();
+
     const baseStyle: ViewStyle = {
-        backgroundColor: bgColor,
+        backgroundColor: Color[theme][bgColor ?? 'surface'],
         // Flex를 기본 스타일로 지정
         display: 'flex',
         flexDirection: direction,
