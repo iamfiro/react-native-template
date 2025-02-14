@@ -14,6 +14,7 @@ import {
 } from '@/components/atoms';
 import { Icon } from '@/components/icon/glyph';
 import {
+    MediaPreviewHeader,
     NavBar,
     Segment,
     SocialLogin,
@@ -23,6 +24,8 @@ import {
 import React, { useState } from 'react';
 import { Text, SafeAreaView } from 'react-native';
 import { DatePicker } from '@/components/organisms';
+
+import Dummy from '@/assets/images/dummy/cat.jpg';
 
 export default function HomeScreen() {
     const options = [
@@ -35,6 +38,7 @@ export default function HomeScreen() {
 
     return (
         <>
+            <MediaPreviewHeader imageSource={Dummy} />
             <SafeAreaView style={{ paddingTop: 40 }}>
                 <TitleHeader showBackButton backButtonText="프로필">
                     안녕하세요
