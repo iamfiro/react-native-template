@@ -1,4 +1,4 @@
-import { ensureDirectoryExists } from "@/lib/fileSystem";
+import { ensureDirectoryExists } from "@/utils/fileSystem";
 import fs from "fs";
 import path from "path";
 
