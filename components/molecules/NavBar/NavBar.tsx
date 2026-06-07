@@ -8,7 +8,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { Color } from '@/constants/color';
 import { cloneElement, isValidElement } from 'react';
 import { VariantColorType } from '@/types/color';
-import { RelativePathString, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 export default function NavBar({ children }: WithChildren) {
     const theme = useTheme();
@@ -72,9 +72,11 @@ const s = StyleSheet.create({
         paddingHorizontal: 16,
         paddingTop: 10,
 
-        paddingBottom: Platform.OS === 'ios' ? 36 : 10, // iOS는 36px, Android는 24px
+        paddingBottom: Platform.OS === 'ios' ? 24 : 10, // iOS는 36px, Android는 24px
 
         borderTopWidth: 1,
+
+        borderRadius: 16,
     },
     item: {
         paddingHorizontal: 10,
