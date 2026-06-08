@@ -55,21 +55,21 @@ export function getButtonStyleByVariant(
     switch (size) {
         case ButtonSize.LARGE:
             return {
-                height: 56,
-                borderRadius: 14,
+                height: 50,
+                borderRadius: 999,
                 fontSize: 17,
                 paddingHorizontal: 20,
             };
         case ButtonSize.MEDIUM:
             return {
-                height: 46,
+                height: 42,
                 borderRadius: 12,
                 fontSize: 15,
                 paddingHorizontal: 16,
             };
         case ButtonSize.SMALL:
             return {
-                height: 38,
+                height: 34,
                 borderRadius: 8,
                 fontSize: 12,
                 paddingHorizontal: 12,
