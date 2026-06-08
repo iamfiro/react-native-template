@@ -7,5 +7,6 @@ export * from './SearchBar';
 export * from './Segment';
 export * from './SocialLogin';
 export * from './Tabs';
+export * from './Title';
 export * from './TitleHeader';
 export * from './Toast';

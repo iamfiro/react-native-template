@@ -9,8 +9,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint",
-    "token:generate": "tsx scripts/generateToken.ts"
+    "lint": "expo lint"
   },
   "jest": {
     "preset": "jest-expo"
