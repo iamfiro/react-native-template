@@ -7,11 +7,11 @@ export default function EmptyState({ icon, title, description, action }: EmptySt
     return (
         <View style={s.container}>
             {icon && <View style={s.icon}>{icon}</View>}
-            <Typo size={17} weight={600} color="text" textAlign="center">
+            <Typo size={17} weight={600} color="onSurface" textAlign="center">
                 {title}
             </Typo>
             {description && (
-                <Typo size={14} weight={400} color="textSecondary" textAlign="center">
+                <Typo size={14} weight={400} color="onSurfaceVariant" textAlign="center">
                     {description}
                 </Typo>
             )}

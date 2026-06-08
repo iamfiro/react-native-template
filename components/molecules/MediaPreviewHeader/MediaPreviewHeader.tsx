@@ -28,7 +28,7 @@ export default function MediaPreviewHeader({
                     hitSlop={8}
                     style={{marginTop: -12}}
                 >
-                    <Icon.chevronLeft size={42} color={Color[theme].white} />
+                    <Icon.chevronLeft size={42} color={Color[theme].onPrimary} />
                 </TouchableOpacity>
             </Box>
         </Box>

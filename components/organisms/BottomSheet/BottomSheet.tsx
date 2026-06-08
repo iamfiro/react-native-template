@@ -78,12 +78,12 @@ export default function BottomSheet({
                     <View style={s.handle} />
 
                     {title && (
-                        <View style={[s.header, { borderBottomColor: Color[theme].border }]}>
-                            <Typo size={16} weight={600} color="text">
+                        <View style={[s.header, { borderBottomColor: Color[theme].outlineVariant }]}>
+                            <Typo size={16} weight={600} color="onSurface">
                                 {title}
                             </Typo>
                             <TouchableOpacity onPress={onClose} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-                                <Icon name="close" size={22} color={Color[theme].textSecondary} />
+                                <Icon name="close" size={22} color={Color[theme].onSurfaceVariant} />
                             </TouchableOpacity>
                         </View>
                     )}

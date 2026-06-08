@@ -17,7 +17,7 @@ export default function Divider({
         <View
             style={[
                 {
-                    backgroundColor: color ?? Color[theme].border,
+                    backgroundColor: color ?? Color[theme].outlineVariant,
                     width: isHorizontal ? '100%' : thickness,
                     height: isHorizontal ? thickness : '100%',
                 },

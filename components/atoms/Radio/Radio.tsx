@@ -34,8 +34,8 @@ export default function Radio({
                     s.circle,
                     {
                         borderColor: selected
-                            ? Color[theme].brand60
-                            : Color[theme].border,
+                            ? Color[theme].primary
+                            : Color[theme].outlineVariant,
                     },
                 ]}
             >
@@ -43,14 +43,14 @@ export default function Radio({
                     style={[
                         s.dot,
                         {
-                            backgroundColor: Color[theme].brand60,
+                            backgroundColor: Color[theme].primary,
                             transform: [{ scale: scaleAnim }],
                         },
                     ]}
                 />
             </View>
             {label && (
-                <Typo size={14} color="text" weight={400}>
+                <Typo size={14} color="onSurface" weight={400}>
                     {label}
                 </Typo>
             )}

@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { TitleHeaderProps } from './TitleHeader.type';
-import { VStack } from '../../atoms/VStack';
+import { Row } from '../../atoms/Row';
 import { Typo } from '../../atoms/Typo';
 import { Icon } from '../../icon/glyph';
 import { useTheme } from '@/hooks/useTheme';
@@ -20,7 +20,7 @@ export default function TitleHeader({
     const [chevronWidth, setChevronWidth] = useState(0);
 
     return (
-        <VStack
+        <Row
             fullWidth
             style={{
                 height: 46,
@@ -32,23 +32,23 @@ export default function TitleHeader({
             }
             align="center"
         >
-            <VStack
+            <Row
                 align="center"
                 onLayout={(e) => setChevronWidth(e.nativeEvent.layout.width)}
             >
-                <VStack
+                <Row
                     as="hoverable"
                     align="center"
                     onPress={() => navigation.goBack()}
                 >
-                    {showBackButton && <Icon.chevronLeft size={40} color={Color[theme].textSecondary} />}
+                    {showBackButton && <Icon.chevronLeft size={40} color={Color[theme].onSurfaceVariant} />}
                     {backButtonText && (
-                        <Typo size={14} color='textSecondary' style={{ marginLeft: -6 }}>
+                        <Typo size={14} color='onSurfaceVariant' style={{ marginLeft: -6 }}>
                             {backButtonText}
                         </Typo>
                     )}
-                </VStack>
-            </VStack>
+                </Row>
+            </Row>
             <Typo>{children}</Typo>
             <Box
                 as="hoverable"
@@ -58,6 +58,6 @@ export default function TitleHeader({
             >
                 {rightContent}
             </Box>
-        </VStack>
+        </Row>
     );
 }

@@ -1,4 +1,4 @@
-import { VariantColorType } from '@/types/color';
+import { ColorToken } from '@/types/color';
 import { ComponentPropsFull } from '@/types/components';
 import { TouchableOpacityProps, ViewProps } from 'react-native';
 
@@ -26,7 +26,7 @@ interface BoxFlexProps {
 
 interface BoxStyleProps
     extends Pick<ComponentPropsFull, 'fullWidth' | 'fullHeight'> {
-    bgColor?: VariantColorType;
+    bgColor?: ColorToken;
 }
 
 export type BoxProps = BoxStyleProps &

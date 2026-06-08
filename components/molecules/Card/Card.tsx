@@ -16,7 +16,7 @@ export default function Card({ children, style, onPress }: CardProps) {
                 s.card,
                 {
                     backgroundColor: Color[theme].surface,
-                    borderColor: Color[theme].border,
+                    borderColor: Color[theme].outlineVariant,
                 },
                 style,
             ]}
@@ -46,7 +46,7 @@ function CardFooter({ children, style }: CardSectionProps) {
     const theme = useTheme();
     return (
         <>
-            <Divider color={Color[theme].border} />
+            <Divider color={Color[theme].outlineVariant} />
             <Box style={[s.section, style]}>
                 {children}
             </Box>

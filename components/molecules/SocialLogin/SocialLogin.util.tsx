@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 import { SocialLoginBrand } from "./SocialLogin.type";
 import { BrandIcon } from '@/components/icon/brand';
-import { VariantColorType } from "@/types/color";
+import { ColorToken } from "@/types/color";
 
 type returnType = {
     icon: ReactNode;
     name: string;
     backgroundColor: string;
-    textColor: VariantColorType;
+    textColor: ColorToken;
 }
 
 /**
@@ -31,21 +31,21 @@ export function getSocialBrandDetail(brand: SocialLoginBrand): returnType {
                 icon: <BrandIcon.google size={22} />,
                 name: 'Google',
                 backgroundColor: '#fff',
-                textColor: 'black'
+                textColor: 'onSurface'
             };
         case SocialLoginBrand.APPLE:
             return {
                 icon: <BrandIcon.apple color="white" size={22} />,
                 name: 'Apple',
                 backgroundColor: '#000',
-                textColor: 'white'
+                textColor: 'inverseOnSurface'
             };
         default:
             return {
                 icon: null,
                 name: '(error)',
                 backgroundColor: '#fff',
-                textColor: 'black'
+                textColor: 'onSurface'
             };
     }
 }

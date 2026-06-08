@@ -29,7 +29,7 @@ export default function SearchBar({
 
     const borderColor = borderAnim.interpolate({
         inputRange: [0, 1],
-        outputRange: [Color[theme].border, Color[theme].borderBrand],
+        outputRange: [Color[theme].outlineVariant, Color[theme].primary],
     });
 
     return (
@@ -43,7 +43,7 @@ export default function SearchBar({
                 },
             ]}
         >
-            <Icon name="search" size={20} color={isFocused ? Color[theme].textBrand : Color[theme].textSecondary} />
+            <Icon name="search" size={20} color={isFocused ? Color[theme].primary : Color[theme].onSurfaceVariant} />
             <TextInput
                 value={value}
                 onChangeText={onChange}
@@ -51,10 +51,10 @@ export default function SearchBar({
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 placeholder={placeholder}
-                placeholderTextColor={Color[theme].textSecondary}
+                placeholderTextColor={Color[theme].onSurfaceVariant}
                 returnKeyType="search"
                 autoFocus={autoFocus}
-                style={[s.input, { color: Color[theme].text }]}
+                style={[s.input, { color: Color[theme].onSurface }]}
             />
             {value.length > 0 && (
                 <TouchableOpacity
@@ -62,7 +62,7 @@ export default function SearchBar({
                     activeOpacity={0.7}
                     hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
                 >
-                    <Icon name="close" size={18} color={Color[theme].textSecondary} />
+                    <Icon name="close" size={18} color={Color[theme].onSurfaceVariant} />
                 </TouchableOpacity>
             )}
         </Animated.View>

@@ -9,7 +9,7 @@ export default function Spinner({ size = 'small', color }: SpinnerProps) {
     return (
         <ActivityIndicator
             size={size}
-            color={color ?? Color[theme].brand60}
+            color={color ?? Color[theme].primary}
         />
     );
 }

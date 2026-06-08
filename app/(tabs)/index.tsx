@@ -4,13 +4,13 @@ import {
     BadgeVariant,
     Button,
     ButtonVariant,
-    HStack,
+    Column,
     Input,
     Label,
+    Row,
     Skeleton,
     Typo,
     TypoWeight,
-    VStack,
 } from '@/components/atoms';
 import { Icon } from '@/components/icon/glyph';
 import {
@@ -43,8 +43,8 @@ export default function HomeScreen() {
                 <TitleHeader showBackButton backButtonText="프로필">
                     안녕하세요
                 </TitleHeader>
-                <HStack style={{ padding: 20 }}>
-                    <VStack>
+                <Column style={{ padding: 20 }}>
+                    <Row>
                         <Button
                             variant={ButtonVariant.BRAND}
                             onPress={() => {}}
@@ -67,7 +67,7 @@ export default function HomeScreen() {
                             저장s하기
                         </Text>
                         <Typo>저장s하기</Typo>
-                    </VStack>
+                    </Row>
                     <Typo size={32} weight={TypoWeight.Bold}>
                         아이이
                     </Typo>
@@ -83,7 +83,7 @@ export default function HomeScreen() {
                         onChange={() => {}}
                         leadingIcon={<Icon.asterisk />}
                     />
-                    <HStack gap={10}>
+                    <Row gap={10}>
                         <SocialLogin
                             brand={SocialLoginBrand.GOOGLE}
                             onPress={() => {}}
@@ -93,10 +93,10 @@ export default function HomeScreen() {
                             brand={SocialLoginBrand.APPLE}
                             onPress={() => {}}
                         />
-                    </HStack>
+                    </Row>
                     <Skeleton width={200} height={24} />
                     <Skeleton width={40} height={40} />
-                </HStack>
+                </Column>
                 <Segment
                     options={options}
                     value={selected}

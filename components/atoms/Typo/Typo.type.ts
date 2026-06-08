@@ -1,4 +1,4 @@
-import { VariantColorType } from "@/types/color";
+import { ColorToken } from "@/types/color";
 import { ComponentPropsForTest, WithChildren } from "@/types/components";
 import { TextStyle } from "react-native";
 
@@ -18,7 +18,7 @@ export interface TypoStyleProps {
 
     maxWidth?: boolean; // 추가: 텍스트 최대 너비
 
-    color?: VariantColorType;
+    color?: ColorToken;
 }
 
 export interface TypoProps extends WithChildren, ComponentPropsForTest, TypoStyleProps {

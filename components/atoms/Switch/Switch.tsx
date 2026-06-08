@@ -33,7 +33,7 @@ export default function Switch({ value, onChange, disabled, label }: SwitchProps
 
     const interpolatedColor = trackColor.interpolate({
         inputRange: [0, 1],
-        outputRange: [Color[theme].surfaceTertiary, Color[theme].brand60],
+        outputRange: [Color[theme].surfaceContainerHigh, Color[theme].primary],
     });
 
     return (
@@ -53,14 +53,14 @@ export default function Switch({ value, onChange, disabled, label }: SwitchProps
                     style={[
                         s.thumb,
                         {
-                            backgroundColor: Color[theme].white,
+                            backgroundColor: Color[theme].onPrimary,
                             transform: [{ translateX }],
                         },
                     ]}
                 />
             </Animated.View>
             {label && (
-                <Typo size={14} color="text" weight={400}>
+                <Typo size={14} color="onSurface" weight={400}>
                     {label}
                 </Typo>
             )}

@@ -21,7 +21,7 @@ export default function Avatar({
         width: boxSize,
         height: boxSize,
         borderRadius,
-        backgroundColor: Color[theme].surfaceBrand,
+        backgroundColor: Color[theme].primaryContainer,
         justifyContent: 'center' as const,
         alignItems: 'center' as const,
         overflow: 'hidden' as const,
@@ -41,7 +41,7 @@ export default function Avatar({
 
     return (
         <View style={[containerStyle, style]}>
-            <Typo size={fontSize} color="textBrand" weight={600}>
+            <Typo size={fontSize} color="primary" weight={600}>
                 {name ? getInitials(name) : '?'}
             </Typo>
         </View>

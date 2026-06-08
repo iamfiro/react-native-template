@@ -46,21 +46,21 @@ export default function Checkbox({
                         height: boxSize,
                         borderRadius: 6,
                         borderColor: checked
-                            ? Color[theme].borderBrand
-                            : Color[theme].border,
+                            ? Color[theme].primary
+                            : Color[theme].outlineVariant,
                         borderWidth: checked ? 0 : 1.5,
                         backgroundColor: checked
-                            ? Color[theme].brand60
+                            ? Color[theme].primary
                             : Color[theme].surface,
                     },
                 ]}
             >
                 <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-                    <CheckIcon size={boxSize * 0.6} color={Color[theme].white} />
+                    <CheckIcon size={boxSize * 0.6} color={Color[theme].onPrimary} />
                 </Animated.View>
             </View>
             {label && (
-                <Typo size={14} color="text" weight={400}>
+                <Typo size={14} color="onSurface" weight={400}>
                     {label}
                 </Typo>
             )}

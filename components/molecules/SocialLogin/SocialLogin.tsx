@@ -1,5 +1,5 @@
 import { Typo } from '@/components/atoms/Typo';
-import { VStack } from '@/components/atoms/VStack';
+import { Row } from '@/components/atoms/Row';
 import { StyleSheet } from 'react-native';
 import { getSocialBrandDetail } from './SocialLogin.util';
 import { SocialLoginProps } from './SocialLogin.type';
@@ -10,12 +10,12 @@ export default function SocialLogin({brand, onPress, border}: SocialLoginProps) 
     const theme = useTheme();
     const info = getSocialBrandDetail(brand);
     return (
-        <VStack
+        <Row
             as="hoverable"
             style={{
                 backgroundColor: info.backgroundColor,
                 
-                borderColor: Color[theme].border,
+                borderColor: Color[theme].outlineVariant,
                 borderWidth: border ? 1 : 0,
 
                 ...s.container,
@@ -23,8 +23,8 @@ export default function SocialLogin({brand, onPress, border}: SocialLoginProps) 
             onPress={onPress}
         >
             {info.icon}
-            <Typo color={info.textColor} weight={400}>{info.name}로 로그인 하기</Typo>
-        </VStack>
+            <Typo color={info.textColor} weight={500}>{info.name}로 로그인 하기</Typo>
+        </Row>
     );
 }
 
@@ -37,6 +37,6 @@ const s = StyleSheet.create({
         height: 58,
         width: '100%',
 
-        borderRadius: 16,
+        borderRadius: 999,
     },
 });

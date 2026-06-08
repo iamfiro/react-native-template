@@ -1,7 +1,7 @@
 import { Icon } from '@/components/icon/glyph';
 import { Typo } from '../Typo';
 import { LabelProps, LabelSize, LabelStatus } from './Label.type';
-import { VStack } from '../VStack';
+import { Row } from '../Row';
 import { Color } from '@/constants/color';
 import { useTheme } from '@/hooks/useTheme';
 
@@ -13,13 +13,13 @@ export default function Label({
 }: LabelProps) {
     const theme = useTheme();
     return (
-        <VStack
+        <Row
             align="center"
             gap={3}
             style={{ opacity: status === LabelStatus.DISABLED ? 0.4 : 1 }}
         >
             <Typo size={size === LabelSize.MEDIUM ? 14 : 12}>{children}</Typo>
-            {essential && <Icon.asterisk size={14} color={Color[theme].error50} />}
-        </VStack>
+            {essential && <Icon.asterisk size={14} color={Color[theme].error} />}
+        </Row>
     );
 }

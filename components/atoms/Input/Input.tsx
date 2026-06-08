@@ -9,7 +9,7 @@ import { Animated, StyleSheet, TextInput, View } from 'react-native';
 import { useTheme } from '@/hooks/useTheme';
 import { Color } from '@/constants/color';
 import { InputProps, InputRef } from './Input.type';
-import { VStack } from '../VStack';
+import { Row } from '../Row';
 
 const Input = forwardRef<InputRef, InputProps>(
     ({ error, leadingIcon, style, ...props }, ref) => {
@@ -22,10 +22,10 @@ const Input = forwardRef<InputRef, InputProps>(
             clonedLeadingIcon = cloneElement(
                 leadingIcon as React.ReactElement<any>,
                 {
-                    style: { color: Color[theme].textSecondary },
+                    style: { color: Color[theme].onSurfaceVariant },
                     color: isFocused
-                        ? Color[theme].text
-                        : Color[theme].textSecondary,
+                        ? Color[theme].onSurface
+                        : Color[theme].onSurfaceVariant,
                 },
             );
         }
@@ -48,14 +48,14 @@ const Input = forwardRef<InputRef, InputProps>(
         };
 
         return (
-            <VStack
+            <Row
                 style={[
                     {
                         borderColor: error
-                            ? Color[theme].borderError
+                            ? Color[theme].error
                             : isFocused
-                              ? Color[theme].borderBrand
-                              : Color[theme].border,
+                              ? Color[theme].primary
+                              : Color[theme].outlineVariant,
                         borderWidth: error || isFocused ? 2 : 1,
                         ...s.container,
                     },
@@ -68,17 +68,17 @@ const Input = forwardRef<InputRef, InputProps>(
                     ref={ref}
                     style={{
                         flex: 1,
-                        color: Color[theme].text,
+                        color: Color[theme].onSurface,
 
                         fontSize: 15,
                         fontFamily: 'PretendardMedium',
                     }}
-                    placeholderTextColor={Color[theme].textSecondary}
+                    placeholderTextColor={Color[theme].onSurfaceVariant}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                     {...props}
                 />
-            </VStack>
+            </Row>
         );
     },
 );

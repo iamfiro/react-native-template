@@ -33,11 +33,11 @@ export default function ListItem({
             )}
 
             <View style={s.content}>
-                <Typo size={15} weight={500} color="text">
+                <Typo size={15} weight={500} color="onSurface">
                     {title}
                 </Typo>
                 {description && (
-                    <Typo size={13} weight={400} color="textSecondary">
+                    <Typo size={13} weight={400} color="onSurfaceVariant">
                         {description}
                     </Typo>
                 )}
@@ -45,13 +45,13 @@ export default function ListItem({
 
             <View style={s.trailing}>
                 {trailingText && (
-                    <Typo size={13} weight={400} color="textSecondary">
+                    <Typo size={13} weight={400} color="onSurfaceVariant">
                         {trailingText}
                     </Typo>
                 )}
                 {trailingIcon && trailingIcon}
                 {showChevron && !trailingIcon && (
-                    <Icon name="chevronRight" size={20} color={Color[theme].textSecondary} />
+                    <Icon name="chevronRight" size={20} color={Color[theme].onSurfaceVariant} />
                 )}
             </View>
         </Container>

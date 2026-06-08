@@ -27,7 +27,7 @@ export default function Tabs({ tabs, value, onChange, disabled }: TabsProps) {
     }, [activeIndex]);
 
     return (
-        <View style={[s.wrapper, { borderBottomColor: Color[theme].border }]}>
+        <View style={[s.wrapper, { borderBottomColor: Color[theme].outlineVariant }]}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.container}>
                 {tabs.map((tab, index) => {
                     const isActive = tab.value === value;
@@ -49,7 +49,7 @@ export default function Tabs({ tabs, value, onChange, disabled }: TabsProps) {
                             <Typo
                                 size={14}
                                 weight={isActive ? 600 : 400}
-                                color={isActive ? 'textBrand' : 'textSecondary'}
+                                color={isActive ? 'primary' : 'onSurfaceVariant'}
                             >
                                 {tab.label}
                             </Typo>
@@ -67,7 +67,7 @@ export default function Tabs({ tabs, value, onChange, disabled }: TabsProps) {
                         style={[
                             s.indicator,
                             {
-                                backgroundColor: Color[theme].brand60,
+                                backgroundColor: Color[theme].primary,
                                 width: tabWidths.current[activeIndex],
                                 transform: [{ translateX: indicatorAnim }],
                             },

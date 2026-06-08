@@ -12,7 +12,7 @@ import { ModalProps } from './Modal.type';
 import { Typo } from '@/components/atoms/Typo';
 import { Icon } from '@/components/atoms/Icon';
 import { Button, ButtonVariant, ButtonSize } from '@/components/atoms/Button';
-import { HStack } from '@/components/atoms/HStack';
+import { Row } from '@/components/atoms/Row';
 
 const VARIANT_MAP: Record<string, ButtonVariant> = {
     brand: ButtonVariant.BRAND,
@@ -61,7 +61,7 @@ export default function Modal({
                         s.container,
                         {
                             backgroundColor: Color[theme].surface,
-                            borderColor: Color[theme].border,
+                            borderColor: Color[theme].outlineVariant,
                             transform: [{ scale: scaleAnim }],
                             opacity: opacityAnim,
                         },
@@ -69,11 +69,11 @@ export default function Modal({
                 >
                     {title && (
                         <View style={s.header}>
-                            <Typo size={17} weight={600} color="text">
+                            <Typo size={17} weight={600} color="onSurface">
                                 {title}
                             </Typo>
                             <TouchableOpacity onPress={onClose} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
-                                <Icon name="close" size={22} color={Color[theme].textSecondary} />
+                                <Icon name="close" size={22} color={Color[theme].onSurfaceVariant} />
                             </TouchableOpacity>
                         </View>
                     )}
@@ -85,7 +85,7 @@ export default function Modal({
                     )}
 
                     {(primaryAction || secondaryAction) && (
-                        <HStack gap={8} style={s.footer} fullWidth>
+                        <Row gap={8} style={s.footer} fullWidth>
                             {secondaryAction && (
                                 <Button
                                     variant={VARIANT_MAP[secondaryAction.variant ?? 'secondary']}
@@ -106,7 +106,7 @@ export default function Modal({
                                     {primaryAction.label}
                                 </Button>
                             )}
-                        </HStack>
+                        </Row>
                     )}
                 </Animated.View>
             </View>

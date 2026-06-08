@@ -1,7 +1,7 @@
 import { useTheme } from '@/hooks/useTheme';
 import { SegmentProps } from './Segment.type';
 import { useCallback } from 'react';
-import { VStack } from '@/components/atoms/VStack';
+import { Row } from '@/components/atoms/Row';
 import { StyleSheet } from 'react-native';
 import { Color } from '@/constants/color';
 import { Box } from '@/components/atoms/Box';
@@ -24,7 +24,7 @@ export default function Segment({
     );
 
     return (
-        <VStack style={s.container} gap={4} bgColor="surfaceSecondary">
+        <Row style={s.container} gap={4} bgColor="surfaceContainer">
             {options.map((option) => {
                 const isSelected = option.value === value;
 
@@ -38,8 +38,8 @@ export default function Segment({
                             isSelected
                                 ? theme === 'light'
                                     ? 'surface'
-                                    : 'surfaceTertiary'
-                                : 'surfaceSecondary'
+                                    : 'surfaceContainerHigh'
+                                : 'surfaceContainer'
                         }
                         style={{
                             boxShadow:
@@ -54,7 +54,7 @@ export default function Segment({
                     </Box>
                 );
             })}
-        </VStack>
+        </Row>
     );
 }
 

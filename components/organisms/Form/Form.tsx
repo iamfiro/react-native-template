@@ -95,7 +95,7 @@ export default function Form({
                         )}
 
                         {error && (
-                            <Typo size={12} weight={400} color="textError">
+                            <Typo size={12} weight={400} color="error">
                                 {error}
                             </Typo>
                         )}

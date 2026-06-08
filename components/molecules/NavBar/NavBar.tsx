@@ -1,30 +1,30 @@
-import { VStack } from '@/components/atoms/VStack';
+import { Row } from '@/components/atoms/Row';
 import { WithChildren } from '@/types/components';
 import { Platform, StyleSheet } from 'react-native';
 import { NavBarItemProps } from './NavBar.type';
-import { HStack } from '@/components/atoms/HStack';
+import { Column } from '@/components/atoms/Column';
 import { Typo } from '@/components/atoms/Typo';
 import { useTheme } from '@/hooks/useTheme';
 import { Color } from '@/constants/color';
 import { cloneElement, isValidElement } from 'react';
-import { VariantColorType } from '@/types/color';
+import { ColorToken } from '@/types/color';
 import { useRouter } from 'expo-router';
 
 export default function NavBar({ children }: WithChildren) {
     const theme = useTheme();
 
     return (
-        <VStack
+        <Row
             fullWidth
             justify="space-around"
             style={{
-                borderTopColor: Color[theme].border,
+                borderTopColor: Color[theme].outlineVariant,
                 backgroundColor: Color[theme].surface,
                 ...s.container,
             }}
         >
             {children}
-        </VStack>
+        </Row>
     );
 }
 
@@ -33,8 +33,8 @@ function NavBarItem({ children, icon, screenName, selected }: NavBarItemProps) {
     const router = useRouter();
 
     const color = {
-        icon: selected ? Color[theme].textBrand : Color[theme].textSecondary,
-        text: selected ? 'textBrand' : 'textSecondary',
+        icon: selected ? Color[theme].primary : Color[theme].onSurfaceVariant,
+        text: selected ? 'primary' : 'onSurfaceVariant',
     };
 
     // Icon의 사이즈를 24로 고정
@@ -46,7 +46,7 @@ function NavBarItem({ children, icon, screenName, selected }: NavBarItemProps) {
         : null;
 
     return (
-        <HStack
+        <Column
             as="hoverable"
             align="center"
             gap={2}
@@ -54,10 +54,10 @@ function NavBarItem({ children, icon, screenName, selected }: NavBarItemProps) {
             onPress={() => router.push(screenName)}
         >
             {clonedIcon}
-            <Typo size={14} color={color.text as VariantColorType} weight={400}>
+            <Typo size={14} color={color.text as ColorToken} weight={400}>
                 {children}
             </Typo>
-        </HStack>
+        </Column>
     );
 }
 

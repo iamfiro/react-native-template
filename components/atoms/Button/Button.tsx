@@ -15,7 +15,7 @@ import React from 'react';
 import { useTheme } from '@/hooks/useTheme';
 import { useButtonAnimation } from '@/hooks/components';
 import { Color } from '@/constants/color';
-import { VariantColorType } from '@/types/color';
+import { ColorToken } from '@/types/color';
 import { Typo } from '../Typo';
 
 export default function Button({
@@ -47,7 +47,7 @@ export default function Button({
             } as TextProps);
         } else if (typeof children === 'string') {
             return (
-                <Typo size={ButtonStyle.size.fontSize} color={ButtonStyle.color.color as VariantColorType}>
+                <Typo size={ButtonStyle.size.fontSize} color={ButtonStyle.color.color as ColorToken}>
                     {children}
                 </Typo>
             );
@@ -87,10 +87,9 @@ export default function Button({
                     <ActivityIndicator
                         size={24}
                         color={
-                            variant === ButtonVariant.SECONDARY ||
-                            variant === ButtonVariant.SUCCESS
-                                ? Color[theme].white
-                                : Color[theme].black
+                            variant === ButtonVariant.SECONDARY
+                                ? Color[theme].onSurface
+                                : Color[theme].onPrimary
                         }
                     />
                 ) : (

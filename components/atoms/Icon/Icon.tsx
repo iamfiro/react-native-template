@@ -7,13 +7,13 @@ import { IconProps, BrandIconProps } from './Icon.type';
 export default function Icon({ name, size = 24, color }: IconProps) {
     const theme = useTheme();
     const Component = GlyphIconMap[name];
-    return <Component size={size} color={color ?? Color[theme].text} />;
+    return <Component size={size} color={color ?? Color[theme].onSurface} />;
 }
 
 function BrandIconComponent({ name, size = 24, color }: BrandIconProps) {
     const theme = useTheme();
     const Component = BrandIconMap[name];
-    return <Component size={size} color={color ?? Color[theme].text} />;
+    return <Component size={size} color={color ?? Color[theme].onSurface} />;
 }
 
 Icon.Brand = BrandIconComponent;

@@ -7,9 +7,9 @@ import {
     Button,
     ButtonSize,
     ButtonVariant,
-    HStack,
+    Column,
+    Row,
     Typo,
-    VStack,
 } from '@/components/atoms';
 import {
     Platform,
@@ -99,8 +99,8 @@ export default function DatePicker({
     };
 
     return (
-        <VStack>
-            <VStack
+        <Column>
+            <Row
                 as="hoverable"
                 onPress={handlePress}
                 disabled={disabled}
@@ -110,8 +110,8 @@ export default function DatePicker({
                     s.container,
                     {
                         borderColor: show
-                            ? Color[theme].borderBrand
-                            : Color[theme].border,
+                            ? Color[theme].primary
+                            : Color[theme].outlineVariant,
                         borderWidth: show ? 2 : 1,
                         opacity: disabled ? 0.5 : 1,
                         backgroundColor: Color[theme].surface,
@@ -120,15 +120,15 @@ export default function DatePicker({
                     },
                 ]}
             >
-                <Icon.calender size={24} color={Color[theme].textSecondary} />
+                <Icon.calender size={24} color={Color[theme].onSurfaceVariant} />
                 <Typo
                     size={15}
-                    color={disabled ? 'textDisabled' : 'text'}
+                    color={disabled ? 'disabled' : 'onSurface'}
                     weight={400}
                 >
                     {formatDate(value)}
                 </Typo>
-            </VStack>
+            </Row>
 
             {/* DatePicker */}
             {show && (
@@ -153,7 +153,7 @@ export default function DatePicker({
                                     s.iosPickerContainer,
                                     {
                                         backgroundColor: Color[theme].surface,
-                                        borderColor: Color[theme].border,
+                                        borderColor: Color[theme].outlineVariant,
                                         top:
                                             -SCREEN_HEIGHT / 2 +
                                             modalHeight / 5,
@@ -181,14 +181,14 @@ export default function DatePicker({
                                     display="inline"
                                     themeVariant={theme}
                                 />
-                                <HStack gap={8} fullWidth>
+                                <Row gap={8} fullWidth>
                                     <Button
                                         variant={ButtonVariant.BRAND}
                                         size={ButtonSize.MEDIUM}
                                         onPress={handleIOSConfirm}
                                         fullWidth
                                     >
-                                        <Typo size={16} color="white">
+                                        <Typo size={16} color="onPrimary">
                                             확인
                                         </Typo>
                                     </Button>
@@ -200,13 +200,13 @@ export default function DatePicker({
                                     >
                                         <Typo size={16}>닫기</Typo>
                                     </Button>
-                                </HStack>
+                                </Row>
                             </Box>
                         </>
                     )}
                 </>
             )}
-        </VStack>
+        </Column>
     );
 }
 
