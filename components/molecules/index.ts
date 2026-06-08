@@ -1,4 +1,5 @@
 export * from './Card';
+export * from './ContentCard';
 export * from './EmptyState';
 export * from './ListItem';
 export * from './MediaPreviewHeader';

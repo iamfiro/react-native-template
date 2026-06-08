@@ -14,6 +14,8 @@ import {
 } from '@/components/atoms';
 import { Asterisk, Home, Settings, User, Search, MapPin, Bell, Sparkles, LogIn } from 'lucide-react-native';
 import {
+    ContentCard,
+    ContentCardVariant,
     MediaPreviewHeader,
     NavBar,
     Segment,
@@ -22,7 +24,7 @@ import {
     TitleHeader,
 } from '@/components/molecules';
 import React, { useState } from 'react';
-import { Text, SafeAreaView, ScrollView } from 'react-native';
+import { Text, SafeAreaView, ScrollView, View, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
 import { DatePicker } from '@/components/organisms';
 
@@ -106,6 +108,47 @@ export default function HomeScreen() {
                     onChange={setSelected}
                 />
 
+                <Column style={{ padding: 20, gap: 16 }}>
+                    <Typo size={18} weight={TypoWeight.Bold}>
+                        ContentCard
+                    </Typo>
+                    <View style={homeStyles.cardGrid}>
+                        <ContentCard variant="elevated" onPress={() => {}} style={homeStyles.gridItem}>
+                            <ContentCard.Image source={Dummy} aspectRatio={3 / 2} />
+                            <ContentCard.Title>속초 양양</ContentCard.Title>
+                            <ContentCard.Description>바다와 산이 만나는 여행지</ContentCard.Description>
+                        </ContentCard>
+                        <ContentCard variant="elevated" onPress={() => {}} style={homeStyles.gridItem}>
+                            <ContentCard.Image source={Dummy} aspectRatio={3 / 2} />
+                            <ContentCard.Title>제주도</ContentCard.Title>
+                            <ContentCard.Description>이 부분은 설명입니다</ContentCard.Description>
+                        </ContentCard>
+                    </View>
+                    <View style={homeStyles.cardGrid}>
+                        <ContentCard variant="flat" onPress={() => {}} style={homeStyles.gridItem}>
+                            <ContentCard.Image source={Dummy} aspectRatio={1}>
+                                <ContentCard.Badge>삼성전자 공식파트너</ContentCard.Badge>
+                            </ContentCard.Image>
+                            <ContentCard.Title numberOfLines={2} size={15} weight={TypoWeight.Medium}>
+                                삼성전자 43인치 Crystal UHD TV
+                            </ContentCard.Title>
+                            <ContentCard.Price
+                                finalPrice={1076000}
+                                originalPrice={1210000}
+                            />
+                        </ContentCard>
+                        <ContentCard variant="flat" onPress={() => {}} style={homeStyles.gridItem}>
+                            <ContentCard.Image source={Dummy} aspectRatio={1} />
+                            <ContentCard.Title numberOfLines={2} size={15} weight={TypoWeight.Medium}>
+                                영광 찐부세 보리굴비 선물세트
+                            </ContentCard.Title>
+                            <ContentCard.Price finalPrice={176000} />
+                        </ContentCard>
+                    </View>
+                    <ContentCard.Skeleton variant="elevated" />
+                    <ContentCard.Skeleton variant="flat" showPrice />
+                </Column>
+
                 <Column style={{ padding: 20, gap: 10 }}>
                     <Typo size={18} weight={TypoWeight.Bold}>
                         페이지 템플릿
@@ -170,3 +213,13 @@ export default function HomeScreen() {
         </>
     );
 }
+
+const homeStyles = StyleSheet.create({
+    cardGrid: {
+        flexDirection: 'row',
+        gap: 12,
+    },
+    gridItem: {
+        flex: 1,
+    },
+});

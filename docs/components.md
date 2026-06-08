@@ -30,6 +30,7 @@ Atomic Design structure. Base path: `components/`.
 | Component | Path | Purpose |
 |---|---|---|
 | Card | `molecules/Card/` | Card container. variant: default (surface+border) / white (surface, no border) / sub (surfaceContainer, no border) |
+| ContentCard | `molecules/ContentCard/` | Compound content card. variant: elevated (shadow) / flat (no container). Sub: Image (overlay slot), Title, Description, Price (original + discount % + final), Badge (absolute on image), Skeleton |
 | EmptyState | `molecules/EmptyState/` | Empty state placeholder |
 | ListItem | `molecules/ListItem/` | List item row. Supports leadingIcon, trailingIcon, trailingText, description, showChevron, destructive |
 | MediaPreviewHeader | `molecules/MediaPreviewHeader/` | Media preview header bar |
