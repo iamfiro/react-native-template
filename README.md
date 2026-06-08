@@ -1,50 +1,117 @@
-# Welcome to your Expo app 👋
+![Banner Image](/.github/images/banner.png)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# React Native Design System for Hackathon
 
-## Get started
+해커톤에서 빠르게 앱을 구현하기 위해 제작된 React Native + Expo 템플릿입니다.
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Quick Start
 
 ```bash
-npm run reset-project
+git clone <this-repo> my-app && cd my-app
+make install
+make start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+> iOS: `make ios` | Android: `make android` | Web: `make web`
 
-## Learn more
+## 기술 스택
 
-To learn more about developing your project with Expo, look at the following resources:
+| 영역 | 기술 |
+|---|---|
+| 프레임워크 | React Native 0.76 + Expo 52 (New Architecture) |
+| 라우팅 | Expo Router (파일 기반) |
+| 디자인 시스템 | Material Design 3 시맨틱 컬러 (Light/Dark) |
+| HTTP | Axios (.env 기반 baseURL) |
+| 푸시 알림 | Firebase Cloud Messaging + Notifee |
+| 애니메이션 | React Native Reanimated |
+| 아이콘 | Lucide React Native |
+| 폰트 | Pretendard (4 weights) |
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 디자인 시스템 구성
 
-## Join the community
+Atomic Design 패턴. 자세한 스펙은 [`docs/components.md`](docs/components.md) 참조.
 
-Join our community of developers creating universal apps.
+### Atoms — UI 기본 요소
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Button, Input, Checkbox, Radio, Switch, Avatar, Badge, Spinner, Skeleton, Icon, Label, Typo, Box, Row, Column, Spacer, Divider, Pressable
+
+### Molecules — 조합 컴포넌트
+
+Card, ListItem, NavBar, SearchBar, Tabs, Segment, Title, TitleHeader, Toast, EmptyState, MediaPreviewHeader, SocialLogin
+
+### Organisms — 복합 UI
+
+Form, Modal, BottomSheet, DatePicker, ErrorBoundary, OnboardingScreen, ProfileScreen, SettingsScreen
+
+### 사용법
+
+```typescript
+import { Button, Input, Box } from '@/components/atoms';
+import { Card, ListItem } from '@/components/molecules';
+import { Modal, Form } from '@/components/organisms';
+```
+
+## 프로젝트 구조
+
+```
+app/
+├── (auth)/              # 인증 (로그인, 회원가입, 비밀번호 찾기)
+├── (onboarding)/        # 온보딩 스와이프
+├── (tabs)/              # 메인 탭 (홈, 지도, 검색, 프로필, 설정)
+└── notifications.tsx    # 알림
+
+components/
+├── atoms/               # 기본 요소 (21개)
+├── molecules/           # 조합 (12개)
+├── organisms/           # 복합 UI (8개)
+└── icon/                # 브랜드 아이콘
+
+hooks/                   # 재사용 상태 로직
+utils/                   # 순수 헬퍼
+api/                     # HTTP 클라이언트
+constants/               # 컬러, 정규식
+types/                   # 공통 타입
+```
+
+## 내장 Hooks & Utils
+
+| Hook | 용도 |
+|---|---|
+| `useDebounce` | 입력값 지연 처리 |
+| `useRefreshControl` | Pull-to-refresh |
+| `useTheme` | 테마 감지 (light/dark) |
+| `useFcmToken` | FCM 토큰 조회 |
+| `useButtonAnimation` | 버튼 프레스 애니메이션 |
+
+| 유틸 | 용도 |
+|---|---|
+| `pushNotification` | FCM 알림 설정 |
+| `fileSystem` | 디렉토리 생성 |
+| `units/time` | 상대 시간 ("3시간 전") |
+| `units/distance` | 거리 (m/km) |
+| `units/largeNumber` | 큰 수 (억/만/천) |
+
+## Make 커맨드
+
+```bash
+make help              # 전체 커맨드 목록
+make start             # Expo 개발 서버
+make ios / android     # 시뮬레이터 실행
+make lint              # ESLint
+make typecheck         # TypeScript 검사
+make check             # lint + typecheck + test 한번에
+make build-ios-dev     # EAS iOS 개발 빌드
+make nuke              # 전체 초기화 + 재설치
+```
+
+## 컨벤션
+
+- **컴포넌트**: Atomic Design (atoms → molecules → organisms)
+- **Hooks**: `use[Domain][Action]` (예: `useFormValidation`)
+- **Utils**: 도메인별 분리 (예: `utils/format.ts`)
+- **타입**: Props는 `.type.ts`에 정의
+- **임포트**: `@/` 경로 별칭
+
+## 라이선스
+
+MIT
