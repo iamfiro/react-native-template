@@ -13,7 +13,7 @@ Atomic Design structure. Base path: `components/`.
 | Checkbox | `atoms/Checkbox/` | Checkbox input |
 | Column | `atoms/Column/` | Vertical flex container |
 | Divider | `atoms/Divider/` | Separator line |
-| Icon | `atoms/Icon/` | Icon renderer (glyph map) |
+| Icon | `atoms/Icon/` | Icon renderer — wraps lucide-react-native icons by name |
 | Input | `atoms/Input/` | Text input. Supports error, leadingIcon |
 | Label | `atoms/Label/` | Text label |
 | Pressable | `atoms/Pressable/` | Touch area. Supports haptic, activeOpacity |
@@ -29,9 +29,9 @@ Atomic Design structure. Base path: `components/`.
 
 | Component | Path | Purpose |
 |---|---|---|
-| Card | `molecules/Card/` | Card container |
+| Card | `molecules/Card/` | Card container. variant: default (surface+border) / white (surface, no border) / sub (surfaceContainer, no border) |
 | EmptyState | `molecules/EmptyState/` | Empty state placeholder |
-| ListItem | `molecules/ListItem/` | List item row |
+| ListItem | `molecules/ListItem/` | List item row. Supports leadingIcon, trailingIcon, trailingText, description, showChevron, destructive |
 | MediaPreviewHeader | `molecules/MediaPreviewHeader/` | Media preview header bar |
 | NavBar | `molecules/NavBar/` | Navigation bar |
 | SearchBar | `molecules/SearchBar/` | Search input bar |
@@ -51,11 +51,15 @@ Atomic Design structure. Base path: `components/`.
 | ErrorBoundary | `organisms/ErrorBoundary/` | Error boundary (class component) |
 | Form | `organisms/Form/` | Form. Configured via fields array. type: text/email/password/number/textarea/date |
 | Modal | `organisms/Modal/` | Modal dialog |
+| OnboardingScreen | `organisms/OnboardingScreen/` | Full-screen onboarding with background image, dark-blue gradient overlay, Title, and configurable action list (button / google / apple / email / custom) |
+| ProfileScreen | `organisms/ProfileScreen/` | Full profile screen. Shows avatar, name, bio, stats, action buttons, and menu sections |
+| SettingsScreen | `organisms/SettingsScreen/` | Settings screen. JSON-driven sections with list items. Supports `type: 'custom'` items for inserting arbitrary UI at any position. Optional `header` ReactNode above sections, `footer` text per section |
 
 ## Icons (`components/icon/`)
 
-### Glyph (`icon/glyph/`)
-asterisk, calender, chevronLeft, chevronRight, chevronDown, clock, close, check, search, warning, error, info, user
+Icons are sourced from `lucide-react-native`. Import directly: `import { ChevronLeft, User } from 'lucide-react-native'`.
+
+The `Icon` atom (`atoms/Icon/`) provides a name-based wrapper for: asterisk, calender, chevronLeft, chevronRight, chevronDown, clock, close, check, search, warning, error, info, user.
 
 ### Brand (`icon/brand/`)
 google, apple

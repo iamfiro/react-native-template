@@ -11,8 +11,10 @@ export enum AvatarShape {
     SQUARE = 'square',
 }
 
+import { ImageSourcePropType } from 'react-native';
+
 export interface AvatarProps {
-    src?: string;
+    src?: ImageSourcePropType;
     name?: string;
     size?: AvatarSize;
     shape?: AvatarShape;

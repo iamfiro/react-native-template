@@ -9,4 +9,5 @@ export interface ListItemProps {
     onPress?: () => void;
     disabled?: boolean;
     showChevron?: boolean;
+    destructive?: boolean;
 }

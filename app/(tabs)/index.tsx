@@ -12,7 +12,7 @@ import {
     Typo,
     TypoWeight,
 } from '@/components/atoms';
-import { Icon } from '@/components/icon/glyph';
+import { Asterisk, Home, Settings, User } from 'lucide-react-native';
 import {
     MediaPreviewHeader,
     NavBar,
@@ -81,7 +81,7 @@ export default function HomeScreen() {
                     <Input
                         placeholder="아이디"
                         onChange={() => {}}
-                        leadingIcon={<Icon.asterisk />}
+                        leadingIcon={<Asterisk />}
                     />
                     <Row gap={10}>
                         <SocialLogin
@@ -112,11 +112,14 @@ export default function HomeScreen() {
                 maximumDate={new Date(2100, 11, 31)}
             />
             <NavBar>
-                <NavBar.Item icon={<Icon.asterisk />} selected screenName="..">
+                <NavBar.Item icon={<Home />} selected screenName="/(tabs)">
                     홈
                 </NavBar.Item>
-                <NavBar.Item selected={false} screenName="..">
-                    홈
+                <NavBar.Item icon={<User />} selected={false} screenName="/(tabs)/profile">
+                    프로필
+                </NavBar.Item>
+                <NavBar.Item icon={<Settings />} selected={false} screenName="/(tabs)/settings">
+                    설정
                 </NavBar.Item>
             </NavBar>
         </>

@@ -14,6 +14,7 @@ export default function ListItem({
     onPress,
     disabled,
     showChevron = !!onPress,
+    destructive = false,
 }: ListItemProps) {
     const theme = useTheme();
 
@@ -33,7 +34,7 @@ export default function ListItem({
             )}
 
             <View style={s.content}>
-                <Typo size={15} weight={500} color="onSurface">
+                <Typo size={15} weight={500} color={destructive ? 'error' : 'onSurface'}>
                     {title}
                 </Typo>
                 {description && (

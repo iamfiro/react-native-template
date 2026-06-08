@@ -62,7 +62,7 @@ export function getButtonStyleByVariant(
             };
         case ButtonSize.MEDIUM:
             return {
-                height: 42,
+                height: 46,
                 borderRadius: 12,
                 fontSize: 15,
                 paddingHorizontal: 16,

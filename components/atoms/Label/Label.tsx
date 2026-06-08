@@ -1,4 +1,4 @@
-import { Icon } from '@/components/icon/glyph';
+import { Asterisk } from 'lucide-react-native';
 import { Typo } from '../Typo';
 import { LabelProps, LabelSize, LabelStatus } from './Label.type';
 import { Row } from '../Row';
@@ -19,7 +19,7 @@ export default function Label({
             style={{ opacity: status === LabelStatus.DISABLED ? 0.4 : 1 }}
         >
             <Typo size={size === LabelSize.MEDIUM ? 14 : 12}>{children}</Typo>
-            {essential && <Icon.asterisk size={14} color={Color[theme].error} />}
+            {essential && <Asterisk size={14} color={Color[theme].error} />}
         </Row>
     );
 }

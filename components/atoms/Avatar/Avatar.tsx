@@ -28,10 +28,11 @@ export default function Avatar({
     };
 
     if (src) {
+        const source = typeof src === 'string' ? { uri: src } : src;
         return (
             <View style={[containerStyle, style]}>
                 <Image
-                    source={{ uri: src }}
+                    source={source}
                     style={{ width: boxSize, height: boxSize }}
                     resizeMode="cover"
                 />

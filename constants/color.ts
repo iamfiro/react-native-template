@@ -1,5 +1,8 @@
 export const Color = {
     light: {
+        // Transparent
+        transparent: 'transparent' as const,
+
         // Primary
         primary: 'rgb(25, 25, 25)',
         onPrimary: '#FFFFFF',
@@ -65,6 +68,9 @@ export const Color = {
         onDisabled: 'rgb(113, 113, 122)',
     },
     dark: {
+        // Transparent
+        transparent: 'transparent' as const,
+
         // Primary
         primary: 'rgb(75, 142, 248)',
         onPrimary: 'rgb(4, 43, 92)',

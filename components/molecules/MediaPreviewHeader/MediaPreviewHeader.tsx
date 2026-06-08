@@ -3,7 +3,7 @@ import { MediaPreviewHeaderProps } from './MediaPreviewHeader.type';
 import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation } from 'expo-router';
-import { Icon } from '@/components/icon/glyph';
+import { ChevronLeft } from 'lucide-react-native';
 import { Color } from '@/constants/color';
 import { useTheme } from '@/hooks/useTheme';
 
@@ -28,7 +28,7 @@ export default function MediaPreviewHeader({
                     hitSlop={8}
                     style={{marginTop: -12}}
                 >
-                    <Icon.chevronLeft size={42} color={Color[theme].onPrimary} />
+                    <ChevronLeft size={42} color={Color[theme].onPrimary} />
                 </TouchableOpacity>
             </Box>
         </Box>

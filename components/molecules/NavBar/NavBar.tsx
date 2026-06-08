@@ -40,7 +40,7 @@ function NavBarItem({ children, icon, screenName, selected }: NavBarItemProps) {
     // Icon의 사이즈를 24로 고정
     const clonedIcon = isValidElement(icon)
         ? cloneElement(icon as React.ReactElement<any>, {
-              size: 22,
+              size: 24,
               color: color.icon,
           })
         : null;
@@ -49,12 +49,12 @@ function NavBarItem({ children, icon, screenName, selected }: NavBarItemProps) {
         <Column
             as="hoverable"
             align="center"
-            gap={2}
+            gap={6}
             style={s.item}
             onPress={() => router.push(screenName)}
         >
             {clonedIcon}
-            <Typo size={14} color={color.text as ColorToken} weight={400}>
+            <Typo size={12} color={color.text as ColorToken} weight={400}>
                 {children}
             </Typo>
         </Column>

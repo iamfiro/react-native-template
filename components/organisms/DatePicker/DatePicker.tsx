@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import { Color } from '@/constants/color';
 import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
-import { Icon } from '@/components/icon/glyph';
+import { Calendar } from 'lucide-react-native';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
@@ -120,7 +120,7 @@ export default function DatePicker({
                     },
                 ]}
             >
-                <Icon.calender size={24} color={Color[theme].onSurfaceVariant} />
+                <Calendar size={24} color={Color[theme].onSurfaceVariant} />
                 <Typo
                     size={15}
                     color={disabled ? 'disabled' : 'onSurface'}

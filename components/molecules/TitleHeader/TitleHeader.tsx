@@ -2,7 +2,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { TitleHeaderProps } from './TitleHeader.type';
 import { Row } from '../../atoms/Row';
 import { Typo } from '../../atoms/Typo';
-import { Icon } from '../../icon/glyph';
+import { ChevronLeft } from 'lucide-react-native';
 import { useTheme } from '@/hooks/useTheme';
 import { Color } from '@/constants/color';
 import { Box } from '../../atoms/Box';
@@ -41,7 +41,7 @@ export default function TitleHeader({
                     align="center"
                     onPress={() => navigation.goBack()}
                 >
-                    {showBackButton && <Icon.chevronLeft size={40} color={Color[theme].onSurfaceVariant} />}
+                    {showBackButton && <ChevronLeft size={40} color={Color[theme].onSurfaceVariant} />}
                     {backButtonText && (
                         <Typo size={14} color='onSurfaceVariant' style={{ marginLeft: -6 }}>
                             {backButtonText}
