@@ -64,7 +64,7 @@ export default function SettingsTab() {
                         },
                         {
                             title: '앱 정보',
-                            style: { paddingTop: 60 },
+                            style: { paddingTop: 32 },
                             footer: '현재 최신 버전을 사용하고 있습니다.',
                             items: [
                                 {
@@ -76,7 +76,7 @@ export default function SettingsTab() {
                                 {
                                     type: 'custom' as const,
                                     id: 'logout-divider',
-                                    render: <Divider />,
+                                    render: <Divider style={{ marginVertical: 12 }} />,
                                 },
                                 {
                                     id: 'logout',
