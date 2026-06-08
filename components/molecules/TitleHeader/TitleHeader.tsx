@@ -41,7 +41,7 @@ export default function TitleHeader({
                     align="center"
                     onPress={() => navigation.goBack()}
                 >
-                    {showBackButton && <ChevronLeft size={40} color={Color[theme].onSurfaceVariant} />}
+                    {showBackButton && <ChevronLeft size={28} color={Color[theme].onSurfaceVariant} />}
                     {backButtonText && (
                         <Typo size={14} color='onSurfaceVariant' style={{ marginLeft: -6 }}>
                             {backButtonText}

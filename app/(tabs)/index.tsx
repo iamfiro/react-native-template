@@ -12,7 +12,7 @@ import {
     Typo,
     TypoWeight,
 } from '@/components/atoms';
-import { Asterisk, Home, Settings, User } from 'lucide-react-native';
+import { Asterisk, Home, Settings, User, Search, MapPin, Bell, Sparkles, LogIn } from 'lucide-react-native';
 import {
     MediaPreviewHeader,
     NavBar,
@@ -22,7 +22,8 @@ import {
     TitleHeader,
 } from '@/components/molecules';
 import React, { useState } from 'react';
-import { Text, SafeAreaView } from 'react-native';
+import { Text, SafeAreaView, ScrollView } from 'react-native';
+import { router } from 'expo-router';
 import { DatePicker } from '@/components/organisms';
 
 import Dummy from '@/assets/images/dummy/cat.jpg';
@@ -38,8 +39,10 @@ export default function HomeScreen() {
 
     return (
         <>
-            <MediaPreviewHeader imageSource={Dummy} />
-            <SafeAreaView style={{ paddingTop: 40 }}>
+            <SafeAreaView style={{ paddingTop: 40, flex: 1 }}>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                                <MediaPreviewHeader imageSource={Dummy} />
+
                 <TitleHeader showBackButton backButtonText="프로필">
                     안녕하세요
                 </TitleHeader>
@@ -102,6 +105,48 @@ export default function HomeScreen() {
                     value={selected}
                     onChange={setSelected}
                 />
+
+                <Column style={{ padding: 20, gap: 10 }}>
+                    <Typo size={18} weight={TypoWeight.Bold}>
+                        페이지 템플릿
+                    </Typo>
+                    <Button
+                        variant={ButtonVariant.BRAND}
+                        onPress={() => router.push('/(auth)/login')}
+                        fullWidth
+                    >
+                        로그인 (Auth)
+                    </Button>
+                    <Button
+                        variant={ButtonVariant.BRAND}
+                        onPress={() => router.push('/(onboarding)')}
+                        fullWidth
+                    >
+                        온보딩
+                    </Button>
+                    <Button
+                        variant={ButtonVariant.BRAND}
+                        onPress={() => router.push('/(tabs)/search')}
+                        fullWidth
+                    >
+                        검색
+                    </Button>
+                    <Button
+                        variant={ButtonVariant.BRAND}
+                        onPress={() => router.push('/notifications')}
+                        fullWidth
+                    >
+                        알림
+                    </Button>
+                    <Button
+                        variant={ButtonVariant.BRAND}
+                        onPress={() => router.push('/(tabs)/map')}
+                        fullWidth
+                    >
+                        지도
+                    </Button>
+                </Column>
+                </ScrollView>
             </SafeAreaView>
             <DatePicker
                 value={date}

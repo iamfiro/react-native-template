@@ -55,6 +55,18 @@ Atomic Design structure. Base path: `components/`.
 | ProfileScreen | `organisms/ProfileScreen/` | Full profile screen. Shows avatar, name, bio, stats, action buttons, and menu sections |
 | SettingsScreen | `organisms/SettingsScreen/` | Settings screen. JSON-driven sections with list items. Supports `type: 'custom'` items for inserting arbitrary UI at any position. Optional `header` ReactNode above sections, `footer` text per section |
 
+## Page Templates (`app/`)
+
+| Page | Path | Purpose |
+|---|---|---|
+| Auth - Login | `app/(auth)/login.tsx` | 로그인 (email/password Form, SocialLogin, 회원가입/비밀번호찾기 링크) |
+| Auth - Register | `app/(auth)/register.tsx` | 회원가입 (email/password/confirm Form, validation, 로그인 링크) |
+| Auth - Forgot Password | `app/(auth)/forgot-password.tsx` | 비밀번호 찾기 (email Form, 로그인 링크) |
+| Onboarding | `app/(onboarding)/index.tsx` | 프리미엄 다크 스와이프 온보딩 (3 steps, 상단 Skip ">", 하단 pagination dots + 인버티드 풀-라운드 CTA "계속/시작하기", FlatList 캐러셀) |
+| Search | `app/(tabs)/search.tsx` | 검색 (back chevron + SearchBar 헤더, 최근 검색어 빈 상태, 인기 검색어 2열 랭킹 리스트 — top 3 tertiary 강조) |
+| Notifications | `app/notifications.tsx` | 알림 리스트 (Korean fintech 스타일: 상단 AD 배너 카드 + "최근 7일" 섹션, 컬러 원형 아이콘 + 우측 타임스탬프, swipe-to-delete) |
+| Map | `app/(tabs)/map.tsx` | 지도 레이아웃 (placeholder MapView, floating search/controls, place list) |
+
 ## Icons (`components/icon/`)
 
 Icons are sourced from `lucide-react-native`. Import directly: `import { ChevronLeft, User } from 'lucide-react-native'`.
@@ -64,10 +76,11 @@ The `Icon` atom (`atoms/Icon/`) provides a name-based wrapper for: asterisk, cal
 ### Brand (`icon/brand/`)
 google, apple
 
-## Hooks (`hooks/components/`)
+## Hooks
 
 | Hook | Purpose |
 |---|---|
+| useDebounce | Debounced value helper for delayed search/input updates |
 | useButtonAnimation | Button press animation |
 
 ## Import

@@ -1,7 +1,5 @@
-import { useTheme } from '@/hooks/useTheme';
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform } from 'react-native';
 
 export default function TabLayout() {
     return (
@@ -14,6 +12,8 @@ export default function TabLayout() {
             }}
         >
             <Tabs.Screen name="index" />
+            <Tabs.Screen name="map" />
+            <Tabs.Screen name="search" />
             <Tabs.Screen name="profile" />
             <Tabs.Screen name="settings" />
         </Tabs>
